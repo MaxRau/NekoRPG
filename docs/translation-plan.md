@@ -8,7 +8,7 @@ See also: [Glossary](translation-glossary.md)
 |---|------|-------------|--------|
 | 1 | `main.js` (root) | ~293 | ✅ Done |
 | 2 | `index.html` | ~104 | ✅ Done |
-| 3 | `src/items.js` | ~562 | ⬜ Pending |
+| 3 | `src/items.js` | ~562 | ✅ Done |
 | 4 | `src/enemies.js` | ~788 | ⬜ Pending |
 | 5 | `src/locations.js` | ~764 | ⬜ Pending |
 | 6 | `src/dialogues.js` | ~265 | ⬜ Pending |
