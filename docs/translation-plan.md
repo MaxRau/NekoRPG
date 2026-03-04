@@ -6,8 +6,8 @@ See also: [Glossary](translation-glossary.md)
 
 | # | File | Est. Strings | Status |
 |---|------|-------------|--------|
-| 1 | `main.js` (root) | ~293 | ⬜ Pending |
-| 2 | `index.html` | ~104 | ⬜ Pending |
+| 1 | `main.js` (root) | ~293 | ✅ Done |
+| 2 | `index.html` | ~104 | ✅ Done |
 | 3 | `src/items.js` | ~562 | ⬜ Pending |
 | 4 | `src/enemies.js` | ~788 | ⬜ Pending |
 | 5 | `src/locations.js` | ~764 | ⬜ Pending |
