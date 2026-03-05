@@ -190,6 +190,76 @@ let selected_stance = "normal";
 let current_stance = "normal";
 const faved_stances = {};
 
+const trader_save_key_aliases = {
+    "自动售货机": "Vending Machine",
+    "矿井集市": "Mine Market",
+    "营地商铺": "Camp Shop",
+    "百宝楼": "Treasure Pavilion",
+    "物品存储箱": "Storage Chest",
+};
+
+const skill_save_key_aliases = {
+    "战斗": "Combat",
+    "赤手空拳": "Unarmed",
+    "拳法": "Unarmed",
+    "武术": "Unarmed",
+    "秘法入门": "Stance mastery",
+    "秘法精通": "Stance mastery",
+    "融血术": "MergeBlood",
+    "三月断宵": "3Moon/Night",
+    "星解之术": "StarDestruction",
+    "微火": "Neko_Realm",
+    "燃灼术": "Neko_Realm",
+    "水无心": "WaterHeartless",
+    "映星花": "ReflectStarFlower",
+    "武器熟练": "Weapon mastery",
+    "武器精通": "Weapon mastery",
+    "剑术": "Swords",
+    "戟术": "Tridents",
+    "银霜月轮·未入门": "Moonwheels",
+    "坚韧皮肤": "Iron skin",
+    "铁制皮肤": "Iron skin",
+    "精钢皮肤": "Iron skin",
+    "讨价还价": "Haggling",
+};
+
+function resolve_trader_key(saved_key) {
+    if(traders[saved_key]) {
+        return saved_key;
+    }
+
+    const aliased_key = trader_save_key_aliases[saved_key];
+    if(aliased_key && traders[aliased_key]) {
+        return aliased_key;
+    }
+
+    const trader_by_name = Object.keys(traders).find((trader_key) => traders[trader_key].name === saved_key);
+    return trader_by_name || null;
+}
+
+function resolve_skill_key(saved_key) {
+    if(skills[saved_key]) {
+        return saved_key;
+    }
+
+    const aliased_key = skill_save_key_aliases[saved_key];
+    if(aliased_key && skills[aliased_key]) {
+        return aliased_key;
+    }
+
+    const skill_by_name = Object.keys(skills).find((skill_key) => Object.values(skills[skill_key].names || {}).includes(saved_key));
+    return skill_by_name || null;
+}
+
+function resolve_stance_key(saved_key) {
+    if(stances[saved_key]) {
+        return saved_key;
+    }
+
+    const stance_by_name_or_id = Object.keys(stances).find((stance_key) => stances[stance_key].id === saved_key || stances[stance_key].name === saved_key);
+    return stance_by_name_or_id || null;
+}
+
 const tickrate = 1;
 //how many ticks per second
 //1 is the default value; going too high might make the game unstable
@@ -3337,9 +3407,10 @@ function load(save_data) {
         if(key === "Literacy") {
             return; //done separately, for compatibility with older saves (can be eventually remove)
         }
-        if(skills[key] && !skills[key].is_parent){
+        const resolved_skill_key = resolve_skill_key(key);
+        if(resolved_skill_key && skills[resolved_skill_key] && !skills[resolved_skill_key].is_parent){
             if(save_data.skills[key].total_xp > 0) {
-                add_xp_to_skill({skill: skills[key], xp_to_add: save_data.skills[key].total_xp, 
+                add_xp_to_skill({skill: skills[resolved_skill_key], xp_to_add: save_data.skills[key].total_xp, 
                                     should_info: false, add_to_parent: true, use_bonus: false
                                 });
             }
@@ -3376,22 +3447,26 @@ function load(save_data) {
 
     if(save_data["stances"]) {
         Object.keys(save_data["stances"]).forEach(stance => {
-            if(save_data["stances"]) {
-                stances[stance].is_unlocked = true;
-            } 
+            const resolved_stance_key = resolve_stance_key(stance);
+            if(resolved_stance_key) {
+                stances[resolved_stance_key].is_unlocked = true;
+            } else {
+                console.warn(`Stance "${stance}" couldn't be found!`);
+            }
         });
     }
     update_displayed_stance_list();
     if(save_data.current_stance) {
-        current_stance = save_data.current_stance;
-        selected_stance = save_data.selected_stance;
+        current_stance = resolve_stance_key(save_data.current_stance) || "normal";
+        selected_stance = resolve_stance_key(save_data.selected_stance) || current_stance;
         change_stance(selected_stance);
     }
     
     if(save_data.faved_stances) {
         Object.keys(save_data.faved_stances).forEach(stance_id=> {
-            if(stances[stance_id] && stances[stance_id].is_unlocked) {
-                fav_stance(stance_id);
+            const resolved_stance_key = resolve_stance_key(stance_id);
+            if(resolved_stance_key && stances[resolved_stance_key].is_unlocked) {
+                fav_stance(resolved_stance_key);
             }
         });
     }
@@ -3649,11 +3724,12 @@ function load(save_data) {
     }); //load for dialogues and their textlines their unlocked/finished status
 
     Object.keys(save_data.traders).forEach(function(trader) { 
+        const resolved_trader_key = resolve_trader_key(trader);
         let trader_item_list = [];
-        if(traders[trader]){
+        if(resolved_trader_key && traders[resolved_trader_key]){
 
             //set as unlocked (it must have been unlocked to be saved, so no need to check the actual value)
-            traders[trader].is_unlocked = true;
+            traders[resolved_trader_key].is_unlocked = true;
 
             if(save_data.traders[trader].inventory) {
                 Object.keys(save_data.traders[trader].inventory).forEach(function(key){
@@ -3805,11 +3881,11 @@ function load(save_data) {
                 });
                 
             }
-            traders[trader].refresh(); 
-            traders[trader].inventory = {};
-            add_to_trader_inventory(trader, trader_item_list);
+            traders[resolved_trader_key].refresh(); 
+            traders[resolved_trader_key].inventory = {};
+            add_to_trader_inventory(resolved_trader_key, trader_item_list);
 
-            traders[trader].last_refresh = save_data.traders[trader].last_refresh; 
+            traders[resolved_trader_key].last_refresh = save_data.traders[trader].last_refresh; 
         }
         else {
             console.warn(`Trader "${trader} couldn't be found!`);
