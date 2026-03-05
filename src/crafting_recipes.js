@@ -258,7 +258,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 //weapon components
 (()=>{
     forging_recipes.components["剑刃"] = new ComponentRecipe({
-        name: "剑刃",
+        name: "Sword Blade",
         materials: [
             {material_id: "铁锭", count: 2, result_id: "铁剑刃"}, 
             {material_id: "精钢锭", count: 2, result_id: "精钢剑刃"}, 
@@ -279,7 +279,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging"
     });
     forging_recipes.components["剑柄"] = new ComponentRecipe({
-        name: "剑柄",
+        name: "Sword Handle",
         materials: [
             {material_id: "骨头", count: 2, result_id: "骨剑柄"}, 
             {material_id: "铜骨", count: 2, result_id: "铜骨剑柄"}, 
@@ -293,7 +293,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging"
     });
     forging_recipes.components["三叉戟头"] = new ComponentRecipe({
-        name: "三叉戟头",
+        name: "Trident Head",
         materials: [
             {material_id: "充能合金锭", count: 6, result_id: "充能戟头"}, 
             {material_id: "脉冲合金锭", count: 6, result_id: "脉冲戟头"}, 
@@ -309,7 +309,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging"
     });
     forging_recipes.components["轮锋"] = new ComponentRecipe({
-        name: "轮锋",
+        name: "Moonwheel Blade",
         materials: [
             {material_id: "秘银锭", count: 18, result_id: "秘银轮锋"}, 
             {material_id: "旋律合金锭", count: 18, result_id: "旋律轮锋"}, 
@@ -320,7 +320,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging"
     });
     forging_recipes.components["轮芯"] = new ComponentRecipe({
-        name: "轮芯",
+        name: "Moonwheel Core",
         materials: [
             {material_id: "固态凝胶", count: 12, result_id: "凝胶轮芯"}, 
             {material_id: "光暗枝丫", count: 12, result_id: "光暗轮芯"}, 
@@ -372,7 +372,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 //armor components
 (()=>{
     forging_recipes.components["头部外甲"] = new ComponentRecipe({
-        name: "头部外甲",
+        name: "Head Outer Plate",
         materials: [
             {material_id: "铁锭", count: 3, result_id: "铁制头盔"}, 
             {material_id: "紫铜锭", count: 3, result_id: "紫铜头盔"}, 
@@ -389,7 +389,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     crafting_recipes.components["头部内甲"] = new ComponentRecipe({
-        name: "头部内甲",
+        name: "Head Inner Lining",
         materials: [
             {material_id: "粘合织料", count: 3, result_id: "粘合帽子"},
             {material_id: "异兽皮", count: 3, result_id: "异兽帽子"},
@@ -403,7 +403,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         component_type: "helmet exterior",
     });
     forging_recipes.components["胸部外甲"] = new ComponentRecipe({
-        name: "胸部外甲",
+        name: "Chest Outer Plate",
         materials: [
             {material_id: "铁锭", count: 4, result_id: "铁制胸甲"}, 
             {material_id: "紫铜锭", count: 4, result_id: "紫铜胸甲"}, 
@@ -420,7 +420,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     crafting_recipes.components["胸部内甲"] = new ComponentRecipe({
-        name: "胸部内甲",
+        name: "Chest Inner Lining",
         materials: [
             {material_id: "粘合织料", count: 4, result_id: "粘合背心"},
             {material_id: "异兽皮", count: 4, result_id: "异兽背心"},
@@ -434,7 +434,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         component_type: "chestplate exterior",
     });
     forging_recipes.components["腿部外甲"] = new ComponentRecipe({
-        name: "腿部外甲",
+        name: "Leg Outer Plate",
         materials: [
             {material_id: "铁锭", count: 4, result_id: "铁制腿甲"}, 
             {material_id: "紫铜锭", count: 4, result_id: "紫铜腿甲"}, 
@@ -451,7 +451,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     crafting_recipes.components["腿部内甲"] = new ComponentRecipe({
-        name: "腿部内甲",
+        name: "Leg Inner Lining",
         materials: [
             {material_id: "粘合织料", count: 4, result_id: "粘合裤子"},
             {material_id: "异兽皮", count: 4, result_id: "异兽裤子"},
@@ -466,7 +466,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     forging_recipes.components["脚部外甲"] = new ComponentRecipe({
-        name: "脚部外甲",
+        name: "Foot Outer Plate",
         materials: [
             {material_id: "铁锭", count: 2, result_id: "铁制战靴"}, 
             {material_id: "紫铜锭", count: 2, result_id: "紫铜战靴"}, 
@@ -483,7 +483,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     crafting_recipes.components["脚部内甲"] = new ComponentRecipe({
-        name: "脚部内甲",
+        name: "Foot Inner Lining",
         materials: [
             {material_id: "粘合织料", count: 2, result_id: "粘合袜子"},
             {material_id: "异兽皮", count: 2, result_id: "异兽袜子"},
@@ -503,39 +503,39 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 (()=>{
     //full weapons
     crafting_recipes.equipment["剑"] = new EquipmentRecipe({
-        name: "剑",
+        name: "Sword",
         components: ["long blade", "short handle"],
         item_type: "Weapon",
     });
     crafting_recipes.equipment["三叉戟"] = new EquipmentRecipe({
-        name: "三叉戟",
+        name: "Trident",
         components: ["triple blade", "short handle"],
         item_type: "Weapon",
     });
     crafting_recipes.equipment["月轮"] = new EquipmentRecipe({
-        name: "月轮",
+        name: "Moonwheel",
         components: ["wheel head", "wheel core"],
         item_type: "Weapon",
     });
 
     //full armor
     crafting_recipes.equipment["头盔"] = new EquipmentRecipe({
-        name: "头盔",
+        name: "Helmet",
         components: ["helmet interior", "helmet exterior"],
         item_type: "Armor",
     });
     crafting_recipes.equipment["胸甲"] = new EquipmentRecipe({
-        name: "胸甲",
+        name: "Chestplate",
         components: ["chestplate interior", "chestplate exterior"],
         item_type: "Armor",
     });
     crafting_recipes.equipment["腿甲"] = new EquipmentRecipe({
-        name: "腿甲",
+        name: "Leggings",
         components: ["leg armor interior", "leg armor exterior"],
         item_type: "Armor",
     });
     crafting_recipes.equipment["战靴"] = new EquipmentRecipe({
-        name: "战靴",
+        name: "Boots",
         components: ["shoes interior", "shoes exterior"],
         item_type: "Armor",
     });
@@ -729,7 +729,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 //trinkets
 (function(){
     crafting_recipes.items["宝石吊坠"] = new ItemRecipe({
-        name: "宝石吊坠",
+        name: "Gemstone Pendant",
         id: "宝石吊坠",
         recipe_type: "items",
         materials: [{material_id: "宝石锭", count: 4},{material_id:"A1·能量核心",count:1}],
@@ -739,7 +739,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items["生命之眼"] = new ItemRecipe({
-        name: "生命之眼",
+        name: "Eye of Life",
         id: "生命之眼",
         recipe_type: "items",
         materials: [{material_id: "地宫金属锭", count: 20},{material_id:"A1·能量核心",count:10},{material_id:"巨型眼球",count:5}],
@@ -749,7 +749,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items["人造茸茸"] = new ItemRecipe({
-        name: "人造茸茸",
+        name: "Artificial Fluffball",
         id: "人造茸茸",
         recipe_type: "items",
         materials: [{material_id: "流动凝胶", count: 20},{material_id:"大地级魂魄",count:10},{material_id:"A1·能量核心",count:5}],
@@ -759,7 +759,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items["巨剑徽章"] = new ItemRecipe({
-        name: "巨剑徽章",
+        name: "Greatsword Emblem",
         id: "巨剑徽章",
         recipe_type: "items",
         materials: [{material_id: "黑色刀币", count: 20},{material_id:"断剑",count:10},{material_id:"润灵铜骨",count:5}],
@@ -770,7 +770,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     crafting_recipes.items2["柳木注灵"] = new ItemRecipe({
-        name: "柳木注灵",
+        name: "Spirit-Infused Willow",
         recipe_type: "material",
         materials: [{material_id: "百年柳木", count: 2},{material_id: "荒兽精华", count: 1},{material_id:"流动凝胶", count: 2}], 
         result: {result_id: "活化柳木", count: 2},
@@ -779,7 +779,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items2["活性织料·改良(x15)"] = new ItemRecipe({
-        name: "活性织料·改良(x15)",
+        name: "Active Fabric: Enhanced (x15)",
         recipe_type: "material",
         materials: [{material_id: "霜炙皮草", count: 10},{material_id:"荒兽精华",count:1}],
         result: {result_id: "活性织料", count: 15},
@@ -788,7 +788,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items2["水火徽章"] = new ItemRecipe({
-        name: "水火徽章",
+        name: "Water-Fire Emblem",
         id: "水火徽章",
         recipe_type: "items",
         materials: [{material_id: "水溶精华", count: 99},{material_id:"荒兽精华",count:99},{material_id:"充能合金锭",count:29}],
@@ -799,7 +799,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items2["结界湖之心"] = new ItemRecipe({
-        name: "结界湖之心",
+        name: "Barrier Lake Heart",
         id: "结界湖之心",
         recipe_type: "items",
         materials: [{material_id: "缠绕水晶", count: 59},{material_id:"蓝金锭",count:39},{material_id:"冰柱鱼",count:3}],
@@ -810,7 +810,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items2["三相徽章"] = new ItemRecipe({
-        name: "三相徽章",
+        name: "Three-Phase Emblem",
         id: "三相徽章",
         recipe_type: "items",
         materials: [{material_id: "水溶精华", count: 99},{material_id:"荒兽精华",count:99},{material_id:"废墟精华",count:99},{material_id:"A7·能量核心",count:99}],
@@ -822,7 +822,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     crafting_recipes.items2["符文工作台"] = new ItemRecipe({
-        name: "符文工作台",
+        name: "Runic Workbench",
         recipe_type: "material",
         materials: [{material_id: "海绿锭", count: 333},{material_id: "废墟符文", count: 333},{material_id:"A7·能量核心", count: 333}], 
         result: {result_id: "符文工作台套件", count: 1},
@@ -832,7 +832,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     crafting_recipes.items2["摩羽巨币"] = new ItemRecipe({
-        name: "摩羽巨币",
+        name: "Giant Mo-Feather Coin",
         id: "摩羽巨币",
         recipe_type: "items",
         materials: [{material_id: "B1·能量核心", count: 99},{material_id:"摩羽币",count:999}],
@@ -843,7 +843,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items2["玻璃大炮"] = new ItemRecipe({
-        name: "玻璃大炮",
+        name: "Glass Cannon",
         id: "玻璃大炮",
         recipe_type: "items",
         materials: [{material_id: "铁锭", count: 999},{material_id:"B1·能量核心",count:99},{material_id:"红黑印记",count:99},{material_id:"雷电加护",count:99}],
@@ -855,7 +855,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     crafting_recipes.items2["飞船之心"] = new ItemRecipe({
-        name: "飞船之心",
+        name: "Vessel Heart",
         id: "飞船之心",
         recipe_type: "items",
         materials: [{material_id: "结界湖之心·材", count: 1},{material_id:"B6·飞船核心",count:1},{material_id:"红钢锭",count:99},{material_id:"固态凝胶",count:99}],
@@ -868,7 +868,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 
     
     crafting_recipes.items3["长明灯"] = new ItemRecipe({
-        name: "长明灯",
+        name: "Eternal Lantern",
         id: "长明灯",
         recipe_type: "items",
         materials: [{material_id: "荧光精华", count: 29},{material_id:"沼泽兽油",count:49},{material_id:"秘银锭",count:79}],
@@ -879,7 +879,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items3["荒兽傀儡"] = new ItemRecipe({
-        name: "荒兽傀儡",
+        name: "Wild Beast Puppet",
         id: "荒兽傀儡",
         recipe_type: "items",
         materials: [{material_id: "沼泽·荒兽肉块", count: 99},{material_id:"沼泽兽油",count:99},{material_id:"B1·能量核心",count:3997}],//scp-cn-3997.
@@ -890,7 +890,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Crafting",
     });
     crafting_recipes.items3["冰刺装甲"] = new ItemRecipe({
-        name: "冰刺装甲",
+        name: "Ice-Thorn Armor",
         id: "冰刺装甲",
         recipe_type: "items",
         materials: [{material_id:"冰原超流体",count:39},{material_id: "多孔冰晶", count: 69},{material_id:"B4·能量核心",count:99}],
@@ -907,7 +907,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 (function(){
     
     smelting_recipes.items["熔炼铁锭"] = new ItemRecipe({
-        name: "熔炼铁锭",
+        name: "Smelt Iron Ingot",
         recipe_type: "material",
         materials: [{material_id: "金属残片", count: 3},{material_id: "魔力碎晶", count: 1}], 
         result: {result_id: "铁锭", count: 1},
@@ -918,7 +918,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     //1-2
     
     smelting_recipes.items["熔炼精钢"] = new ItemRecipe({
-        name: "熔炼精钢",
+        name: "Smelt Fine Steel",
         recipe_type: "material",
         materials: [{material_id: "铁锭", count: 1},{material_id: "合金残片", count: 2},{material_id: "魔力碎晶", count: 3}], 
         result: {result_id: "精钢锭", count: 1},
@@ -928,7 +928,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     smelting_recipes.items["熔炼紫铜"] = new ItemRecipe({
-        name: "熔炼紫铜",
+        name: "Smelt Purple Copper",
         recipe_type: "material",
         materials: [{material_id: "紫铜矿", count: 2},{material_id: "毒液", count: 1},{material_id:"煤炭", count: 1}], 
         result: {result_id: "紫铜锭", count: 1},
@@ -937,7 +937,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items["地宫合金"] = new ItemRecipe({
-        name: "地宫合金",
+        name: "Underground Palace Alloy",
         recipe_type: "material",
         materials: [{material_id: "紫铜锭", count: 1},{material_id: "断剑", count: 3},{material_id:"A1·能量核心", count: 1}], 
         result: {result_id: "地宫金属锭", count: 1},
@@ -946,7 +946,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items["锤炼宝石"] = new ItemRecipe({
-        name: "锤炼宝石",
+        name: "Forge Gemstone",
         recipe_type: "material",
         materials: [{material_id: "初始红宝石", count: 2},{material_id: "初始绿宝石", count: 4},{material_id: "高级黄宝石", count: 2}], 
         result: {result_id: "宝石锭", count: 1},
@@ -955,7 +955,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items["暗影提炼"] = new ItemRecipe({
-        name: "暗影提炼",
+        name: "Shadow Refinement",
         recipe_type: "material",
         materials: [{material_id: "黑色刀币", count: 1},{material_id: "大地级魂魄", count: 1},{material_id:"A1·能量核心", count: 1}], 
         result: {result_id: "暗影钢锭", count: 1},
@@ -965,7 +965,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     smelting_recipes.items2["充能合金·粗制"] = new ItemRecipe({
-        name: "充能合金·粗制",
+        name: "Energized Alloy: Crude",
         recipe_type: "material",
         materials: [{material_id: "黑色刀币", count: 1},{material_id: "甲壳碎片", count: 4},{material_id:"A4·能量核心", count: 2}], 
         result: {result_id: "充能合金锭", count: 1},
@@ -974,7 +974,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items2["充能合金·精制(x4)"] = new ItemRecipe({
-        name: "充能合金·精制",
+        name: "Energized Alloy: Refined",
         recipe_type: "material",
         materials: [{material_id: "水溶精华", count: 1},{material_id: "甲壳碎片", count: 4},{material_id:"A4·能量核心", count: 1}], 
         result: {result_id: "充能合金锭", count: 4},
@@ -983,7 +983,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items2["脉冲合金"] = new ItemRecipe({
-        name: "脉冲合金",
+        name: "Pulse Alloy",
         recipe_type: "material",
         materials: [{material_id: "充能合金锭", count: 1},{material_id: "A4·能量核心", count: 2},{material_id:"浅蓝晶粉", count: 2}], 
         result: {result_id: "脉冲合金锭", count: 1},
@@ -992,7 +992,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items2["熔炼蓝金"] = new ItemRecipe({
-        name: "熔炼蓝金",
+        name: "Smelt Blue Gold",
         recipe_type: "material",
         materials: [{material_id: "结界湖血肉", count: 1},{material_id: "A7·能量核心", count: 1},{material_id:"蓝金碎片", count: 2}], 
         result: {result_id: "蓝金锭", count: 1},
@@ -1001,7 +1001,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items2["熔炼海绿(x2)"] = new ItemRecipe({
-        name: "熔炼海绿(x2)",
+        name: "Smelt Sea-Green (x2)",
         recipe_type: "material",
         materials: [{material_id: "绿色刀币", count: 1},{material_id: "A7·能量核心", count: 4},{material_id:"废墟精华", count: 2}], 
         result: {result_id: "海绿锭", count: 2},
@@ -1011,7 +1011,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     smelting_recipes.items2["熔炼红钢(x4)"] = new ItemRecipe({
-        name: "熔炼红钢(x4)",
+        name: "Smelt Red Steel (x4)",
         recipe_type: "material",
         materials: [{material_id: "重甲残骸", count: 8},{material_id: "红黑印记", count: 3},{material_id: "B1·能量核心", count: 1}], 
         result: {result_id: "红钢锭", count: 4},
@@ -1021,7 +1021,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     smelting_recipes.items2["重铸飞船核心"] = new ItemRecipe({
-        name: "重铸飞船核心",
+        name: "Recast Vessel Core",
         recipe_type: "material",
         materials: [{material_id: "重甲残骸", count: 999},{material_id: "红黑印记", count: 999},{material_id: "B1·能量核心", count: 999},{material_id: "初等进化结晶", count:1}], 
         result: {result_id: "B6·飞船核心", count: 1},
@@ -1031,7 +1031,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     smelting_recipes.items3["旋律合金(x2)"] = new ItemRecipe({
-        name: "旋律合金(x2)",
+        name: "Melody Alloy (x2)",
         recipe_type: "material",
         materials: [{material_id: "天空兽角", count: 2},{material_id: "荧光精华", count: 3},{material_id: "B4·能量核心", count: 1}], 
         result: {result_id: "旋律合金锭", count: 2},
@@ -1040,7 +1040,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Smelting",
     });
     smelting_recipes.items3["万载冰髓·古法"] = new ItemRecipe({
-        name: "万载冰髓·古法",
+        name: "Ice Marrow: Ancient Method",
         recipe_type: "material",
         materials: [{material_id: "冰原超流体", count: 10},{material_id: "多孔冰晶", count: 5},{material_id: "史诗蓝宝石",count: 5},{material_id: "黑森叶片", count: 5}], 
         result: {result_id: "万载冰髓锭", count: 1},
@@ -1053,7 +1053,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 (function(){
     
     cooking_recipes.items["微尘级·烤肉"] = new ItemRecipe({
-        name: "微尘级·烤肉",
+        name: "Dust-Grade: Grilled Meat",
         recipe_type: "material",
         materials: [{material_id: "微尘·凶兽肉块", count: 1},{material_id: "魔力碎晶", count: 1}], 
         result: {result_id: "微尘·凶兽肉排", count: 1},
@@ -1061,7 +1061,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_level: [0,3],
         recipe_skill: "Cooking",
     });cooking_recipes.items["万物级·烤肉"] = new ItemRecipe({
-        name: "万物级·烤肉",
+        name: "World-Grade: Grilled Meat",
         recipe_type: "material",
         materials: [{material_id: "万物·凶兽肉块", count: 1},{material_id: "魔力碎晶", count: 3}], 
         result: {result_id: "万物·凶兽肉排", count: 1},
@@ -1070,7 +1070,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items["潮汐级·烤肉"] = new ItemRecipe({
-        name: "潮汐级·烤肉",
+        name: "Tide-Grade: Grilled Meat",
         recipe_type: "material",
         materials: [{material_id: "潮汐·凶兽肉块", count: 1},{material_id: "煤炭", count: 1}], 
         result: {result_id: "潮汐·凶兽肉排", count: 1},
@@ -1079,7 +1079,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items["大地级·烤肉"] = new ItemRecipe({
-        name: "大地级·烤肉",
+        name: "Earth-Grade: Grilled Meat",
         recipe_type: "material",
         materials: [{material_id: "地宫·荒兽肉块", count: 1},{material_id: "A1·能量核心", count: 1}], 
         result: {result_id: "地宫·荒兽肉排", count: 1},
@@ -1088,7 +1088,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items2["大地级·烤肉 II"] = new ItemRecipe({
-        name: "大地级·烤肉 II",
+        name: "Earth-Grade: Grilled Meat II",
         recipe_type: "material",
         materials: [{material_id: "森林·荒兽肉块", count: 1},{material_id: "A4·能量核心", count: 1}], 
         result: {result_id: "森林·荒兽肉排", count: 1},
@@ -1098,7 +1098,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     cooking_recipes.items2["鱼肉处理"] = new ItemRecipe({
-        name: "鱼肉处理",
+        name: "Fish Processing",
         recipe_type: "material",
         materials: [{material_id: "湖鲤鱼", count: 1}], 
         result: {result_id: "结界湖血肉", count: 2},
@@ -1107,7 +1107,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items2["蓝金处理"] = new ItemRecipe({
-        name: "蓝金处理",
+        name: "Blue Gold Processing",
         recipe_type: "material",
         materials: [{material_id: "湖鲤鱼", count: 1}], 
         result: {result_id: "蓝金碎片", count: 2},
@@ -1117,7 +1117,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     cooking_recipes.items2["大地级·烤肉 III"] = new ItemRecipe({
-        name: "大地级·烤肉 III",
+        name: "Earth-Grade: Grilled Meat III",
         recipe_type: "material",
         materials: [{material_id: "战场·荒兽肉块", count: 1},{material_id: "A7·能量核心", count: 1}], 
         result: {result_id: "战场·荒兽肉排", count: 1},
@@ -1127,7 +1127,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     cooking_recipes.items2["废墟恢复药水"] = new ItemRecipe({
-        name: "废墟恢复药水",
+        name: "Ruins Recovery Potion",
         recipe_type: "material",
         materials: [{material_id: "高能凝胶", count: 1},{material_id: "废墟精华", count: 1}], 
         result: {result_id: "废墟恢复药水", count: 2},
@@ -1136,7 +1136,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items2["废墟狂暴药水"] = new ItemRecipe({
-        name: "废墟狂暴药水",
+        name: "Ruins Frenzy Potion",
         recipe_type: "material",
         materials: [{material_id: "高能凝胶", count: 2},{material_id: "废墟精华", count: 2}], 
         result: {result_id: "废墟狂暴药水", count: 2},
@@ -1145,7 +1145,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items3["天空级·炸肉"] = new ItemRecipe({
-        name: "天空级·炸肉 ",
+        name: "Sky-Grade: Fried Meat",
         recipe_type: "material",
         materials: [{material_id: "沼泽·荒兽肉块", count: 1},{material_id: "沼泽兽油", count: 1},{material_id: "B1·能量核心", count: 2}], 
         result: {result_id: "沼泽·荒兽肉排", count: 1},
@@ -1154,7 +1154,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Cooking",
     });
     cooking_recipes.items3["能量冰沙"] = new ItemRecipe({
-        name: "能量冰沙",
+        name: "Energy Smoothie",
         recipe_type: "material",
         materials: [{material_id: "冰原超流体", count: 1},{material_id: "B4·能量核心", count: 4},{material_id: "B1·能量核心", count: 9}], 
         result: {result_id: "能量冰沙", count: 1},
@@ -1168,7 +1168,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 (function(){
     
     forging_recipes.items["精钢镐"] = new ItemRecipe({
-        name: "精钢镐",
+        name: "Fine Steel Pickaxe",
         recipe_type: "material",
         materials: [{material_id: "精钢锭", count: 3},{material_id: "铜骨", count: 1}], 
         result: {result_id: "精钢镐", count: 1},
@@ -1177,7 +1177,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging",
     });
     forging_recipes.items["紫铜镐"] = new ItemRecipe({
-        name: "紫铜镐",
+        name: "Purple Copper Pickaxe",
         recipe_type: "material",
         materials: [{material_id: "紫铜锭", count: 3},{material_id: "润灵铜骨", count: 1}], 
         result: {result_id: "紫铜镐", count: 1},
@@ -1187,7 +1187,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     forging_recipes.items["暗影斧"] = new ItemRecipe({
-        name: "暗影斧",
+        name: "Shadow Axe",
         recipe_type: "material",
         materials: [{material_id: "暗影钢锭", count: 3},{material_id: "地宫金属锭", count: 2}], 
         result: {result_id: "暗影斧", count: 1},
@@ -1196,7 +1196,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging",
     });
     forging_recipes.items["充能斧"] = new ItemRecipe({
-        name: "充能斧",
+        name: "Energized Axe",
         recipe_type: "material",
         materials: [{material_id: "充能合金锭", count: 3},{material_id: "活化柳木", count: 1}], 
         result: {result_id: "充能斧", count: 1},
@@ -1205,7 +1205,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging",
     });
     forging_recipes.items["缠绕水晶"] = new ItemRecipe({
-        name: "缠绕水晶",
+        name: "Entwined Crystal",
         recipe_type: "material",
         materials: [{material_id: "透明水晶", count: 1},{material_id: "秘境芦苇", count: 2}],
         result: {result_id: "缠绕水晶", count: 1},
@@ -1214,7 +1214,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Forging",
     });
     forging_recipes.items["缠绕水晶-精制[x5]"] = new ItemRecipe({
-        name: "缠绕水晶-精制[x5]",
+        name: "Entwined Crystal: Refined [x5]",
         recipe_type: "material",
         materials: [{material_id: "透明水晶", count: 1},{material_id: "废墟符文", count: 1}],
         result: {result_id: "缠绕水晶", count: 5},
@@ -1224,7 +1224,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     forging_recipes.items["固态凝胶"] = new ItemRecipe({
-        name: "固态凝胶",
+        name: "Solidified Gel",
         recipe_type: "material",
         materials: [{material_id: "高能凝胶", count: 1},{material_id: "雷电加护", count: 1}],
         result: {result_id: "固态凝胶", count: 1},
@@ -1240,7 +1240,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 //炼金
 (function(){
     alchemy_recipes.items["粘合织料"] = new ItemRecipe({
-        name: "粘合织料",
+        name: "Adhesive Fabric",
         recipe_type: "material",
         materials: [{material_id: "凝胶", count: 1},{material_id: "飞蛾翅膀", count: 1}],
         result: {result_id: "粘合织料", count: 1},
@@ -1249,7 +1249,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items["润灵铜骨"] = new ItemRecipe({
-        name: "铜骨注灵",
+        name: "Spirit-Infused Copper Bone",
         recipe_type: "material",
         materials: [{material_id: "铜骨", count: 1},{material_id: "天蚕丝", count: 1},{material_id:"灵液",count:2}],
         result: {result_id: "润灵铜骨", count: 1},
@@ -1258,7 +1258,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items["提炼宝石"] = new ItemRecipe({
-        name: "提炼宝石",
+        name: "Refined Gemstone",
         recipe_type: "material",
         materials: [{material_id: "坚硬石块", count: 1},{material_id: "魔力碎晶", count: 1}], 
         result: {result_id: "初始黄宝石", count: 1},
@@ -1268,7 +1268,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     alchemy_recipes.items["精炼宝石 I"] = new ItemRecipe({
-        name: "精炼宝石 I",
+        name: "Fine-Refined Gemstone I",
         recipe_type: "material",
         materials: [{material_id: "初始黄宝石", count: 5},{material_id: "魔力碎晶", count: 2}], 
         result: {result_id: "初始蓝宝石", count: 1},
@@ -1277,7 +1277,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items["精炼宝石 II"] = new ItemRecipe({
-        name: "精炼宝石 II",
+        name: "Fine-Refined Gemstone II",
         recipe_type: "material",
         materials: [{material_id: "红色刀币", count: 3},{material_id: "魔力碎晶", count: 4}], 
         result: {result_id: "初始红宝石", count: 1},
@@ -1287,7 +1287,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     alchemy_recipes.items["地宫恢复药水"] = new ItemRecipe({
-        name: "地宫恢复药水",
+        name: "Underground Palace Recovery Potion",
         recipe_type: "material",
         materials: [{material_id: "大地级魂魄", count: 1},{material_id: "巨型眼球", count: 1}], 
         result: {result_id: "地宫恢复药水", count: 1},
@@ -1296,7 +1296,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items["地宫狂暴药水"] = new ItemRecipe({
-        name: "地宫狂暴药水",
+        name: "Underground Palace Frenzy Potion",
         recipe_type: "material",
         materials: [{material_id: "大地级魂魄", count: 3},{material_id: "A1·能量核心", count: 1}], 
         result: {result_id: "地宫狂暴药水", count: 1},
@@ -1305,7 +1305,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items["活性织料"] = new ItemRecipe({
-        name: "活性织料",
+        name: "Active Fabric",
         recipe_type: "material",
         materials: [{material_id: "流动凝胶", count: 1},{material_id: "霜炙皮草", count: 1},{material_id:"大地级魂魄",count:1}],
         result: {result_id: "活性织料", count: 1},
@@ -1316,7 +1316,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 
     
     alchemy_recipes.items2["炼金药剂-魔攻"] = new ItemRecipe({
-        name: "炼金药剂-魔攻",
+        name: "Alchemical Potion - Magic Attack",
         recipe_type: "material",
         materials: [{material_id: "荒兽精华", count: 20},{material_id: "水溶精华", count: 20},{material_id: "A4·能量核心",count:40}], 
         result: {result_id: "A9·魔攻药剂", count: 1},
@@ -1325,7 +1325,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["炼金药剂-回风"] = new ItemRecipe({
-        name: "炼金药剂-回风",
+        name: "Alchemical Potion - Whirlwind",
         recipe_type: "material",
         materials: [{material_id: "荒兽精华", count: 20},{material_id: "水溶精华", count: 20},{material_id: "A4·能量核心",count:40}], 
         result: {result_id: "A9·回风药剂", count: 1},
@@ -1334,7 +1334,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["炼金药剂-牵制"] = new ItemRecipe({
-        name: "炼金药剂-牵制",
+        name: "Alchemical Potion - Suppression",
         recipe_type: "material",
         materials: [{material_id: "荒兽精华", count: 20},{material_id: "水溶精华", count: 20},{material_id: "A4·能量核心",count:40}], 
         result: {result_id: "A9·牵制药剂", count: 1},
@@ -1343,7 +1343,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["炼金药剂-坚固"] = new ItemRecipe({
-        name: "炼金药剂-坚固",
+        name: "Alchemical Potion - Fortify",
         recipe_type: "material",
         materials: [{material_id: "荒兽精华", count: 20},{material_id: "水溶精华", count: 20},{material_id: "A4·能量核心",count:40}], 
         result: {result_id: "A9·坚固药剂", count: 1},
@@ -1353,7 +1353,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
     
     alchemy_recipes.items2["湛蓝芦苇"] = new ItemRecipe({
-        name: "湛蓝芦苇",
+        name: "Azure Reed",
         recipe_type: "material",
         materials: [{material_id: "水溶精华", count: 1},{material_id: "秘境芦苇", count: 1}],
         result: {result_id: "湛蓝芦苇", count: 1},
@@ -1362,7 +1362,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["高能织料"] = new ItemRecipe({
-        name: "高能织料",
+        name: "High-Energy Fabric",
         recipe_type: "material",
         materials: [{material_id: "高能凝胶", count: 1},{material_id: "废墟精华", count: 1},{material_id:"A7·能量核心",count:1}],
         result: {result_id: "高能织料", count: 1},
@@ -1371,7 +1371,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["超浓缩药剂-坚固"] = new ItemRecipe({
-        name: "超浓缩药剂-坚固",
+        name: "Ultra-Concentrated Potion - Fortify",
         recipe_type: "material",
         materials: [{material_id: "A9·坚固药剂", count: 50},{material_id: "B1·能量核心", count: 50},{material_id: "雷电加护",count:40}], 
         result: {result_id: "超浓缩·坚固药剂", count: 1},
@@ -1380,7 +1380,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["拆包-高能凝胶"] = new ItemRecipe({
-        name: "拆包-高能凝胶",
+        name: "Unpack - High-Energy Gel",
         recipe_type: "material",
         materials: [{material_id: "一捆高能凝胶", count: 1}], 
         result: {result_id: "高能凝胶", count: 100},
@@ -1389,7 +1389,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items2["拆包-B1·能量核心"] = new ItemRecipe({
-        name: "拆包-B1·能量核心",
+        name: "Unpack - B1 Energy Core",
         recipe_type: "material",
         materials: [{material_id: "一捆B1·能量核心", count: 1}], 
         result: {result_id: "B1·能量核心", count: 100},
@@ -1400,7 +1400,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 
 
     alchemy_recipes.items3["光暗枝丫"] = new ItemRecipe({
-        name: "光暗枝丫",
+        name: "Light-Dark Branch",
         recipe_type: "material",
         materials: [{material_id: "黑白枝丫", count: 1},{material_id: "荧光精华", count: 2}], 
         result: {result_id: "光暗枝丫", count: 1},
@@ -1409,7 +1409,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items3["黑森织料"] = new ItemRecipe({
-        name: "黑森织料",
+        name: "Black Forest Fabric",
         recipe_type: "material",
         materials: [{material_id: "黑森叶片", count: 1},{material_id: "荧光精华", count: 1},{material_id: "沼泽兽油", count: 2}], 
         result: {result_id: "黑森织料", count: 1},
@@ -1419,7 +1419,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     });
 
     alchemy_recipes.items3["进阶炼金药剂-散华"] = new ItemRecipe({
-        name: "进阶炼金药剂-散华",
+        name: "Advanced Alchemical Potion - Scatter",
         recipe_type: "material",
         materials: [{material_id: "黑白枝丫", count: 10},{material_id: "荧光精华", count: 20},{material_id: "沼泽兽油",count:20}], 
         result: {result_id: "B9·散华药剂", count: 1},
@@ -1428,7 +1428,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items3["进阶炼金药剂-反戈"] = new ItemRecipe({
-        name: "进阶炼金药剂-反戈",
+        name: "Advanced Alchemical Potion - Reversal",
         recipe_type: "material",
         materials: [{material_id: "黑白枝丫", count: 10},{material_id: "荧光精华", count: 20},{material_id: "沼泽兽油",count:20}], 
         result: {result_id: "B9·反戈药剂", count: 1},
@@ -1437,7 +1437,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items3["进阶炼金药剂-灵闪"] = new ItemRecipe({
-        name: "进阶炼金药剂-灵闪",
+        name: "Advanced Alchemical Potion - Spirit Flash",
         recipe_type: "material",
         materials: [{material_id: "黑白枝丫", count: 10},{material_id: "荧光精华", count: 20},{material_id: "沼泽兽油",count:20}], 
         result: {result_id: "B9·灵闪药剂", count: 1},
@@ -1446,7 +1446,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_skill: "Alchemy",
     });
     alchemy_recipes.items3["进阶炼金药剂-异界"] = new ItemRecipe({
-        name: "进阶炼金药剂-异界",
+        name: "Advanced Alchemical Potion - Void Gate",
         recipe_type: "material",
         materials: [{material_id: "黑白枝丫", count: 10},{material_id: "荧光精华", count: 20},{material_id: "沼泽兽油",count:20}], 
         result: {result_id: "B9·异界药剂", count: 1},

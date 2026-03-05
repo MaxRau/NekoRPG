@@ -1597,6 +1597,11 @@ function update_displayed_normal_location(location) {
  */
 function create_location_choices({location, category, add_icons = true, is_combat = false}) {
     let choice_list = [];
+    const resolve_location_ref = (location_ref) => {
+        return locations[location_ref] || Object.values(locations).find(existing_location => {
+            return existing_location?.id === location_ref || existing_location?.name === location_ref;
+        });
+    };
     
     if(category === "talk") {
         for(let i = 0; i < location.dialogues.length; i++) { 
@@ -1767,21 +1772,23 @@ function create_location_choices({location, category, add_icons = true, is_comba
                 }
             
                 action.classList.add("action_travel");
-                action.setAttribute("data-travel", location.connected_locations[i].location.name);
+                action.setAttribute("data-travel", location.connected_locations[i].location.id || location.connected_locations[i].location.name);
                 action.setAttribute("onclick", "change_location(this.getAttribute('data-travel'));");
         
                 choice_list.push(action);
             } 
 
-            if(last_combat_location && location.connected_locations.filter(loc => loc.location.name === last_combat_location).length == 0) {
-                const last_combat = locations[last_combat_location];
+            const last_combat = resolve_location_ref(last_combat_location);
+            if(last_combat && location.connected_locations.filter(loc => {
+                return loc.location?.id === last_combat.id || loc.location?.name === last_combat.name;
+            }).length == 0) {
                 const action = document.createElement("div");
                 action.classList.add("travel_combat");
                 
                 action.innerHTML = `<span style="color:#ffd8c0"><i class="material-icons">warning_amber</i>  快速返回 [${last_combat.name}]</span>`;
                 
                 action.classList.add("action_travel");
-                action.setAttribute("data-travel", last_combat.name);
+                action.setAttribute("data-travel", last_combat.id || last_combat.name);
                 action.setAttribute("onclick", "change_location(this.getAttribute('data-travel'));");
         
                 choice_list.push(action);
@@ -1794,14 +1801,16 @@ function create_location_choices({location, category, add_icons = true, is_comba
             } else {
                 action.innerHTML = `<i class="material-icons">directions</i>  ` + "回到 " + location.parent_location.name;
             }
-            action.setAttribute("data-travel", location.parent_location.name);
+            action.setAttribute("data-travel", location.parent_location.id || location.parent_location.name);
             action.setAttribute("onclick", "change_location(this.getAttribute('data-travel'));");
 
             choice_list.push(action);
         }
 
-        if(last_location_with_bed && !location.sleeping && (!location.connected_locations || location?.connected_locations?.filter(loc => loc.location.name === last_location_with_bed).length == 0)) {
-            const last_bed = locations[last_location_with_bed];
+        const last_bed = resolve_location_ref(last_location_with_bed);
+        if(last_bed && !location.sleeping && (!location.connected_locations || location?.connected_locations?.filter(loc => {
+            return loc.location?.id === last_bed.id || loc.location?.name === last_bed.name;
+        }).length == 0)) {
 
             const action = document.createElement("div");
             action.classList.add("travel_normal");
@@ -1809,7 +1818,7 @@ function create_location_choices({location, category, add_icons = true, is_comba
             action.innerHTML = `<span style="color:#c0c0ff"><i class="material-icons">directions</i> 快速返回 [${last_bed.name}]</span>`;
             
             action.classList.add("action_travel");
-            action.setAttribute("data-travel", last_bed.name);
+            action.setAttribute("data-travel", last_bed.id || last_bed.name);
             action.setAttribute("onclick", "change_location(this.getAttribute('data-travel'));");
     
             choice_list.push(action);
@@ -1831,7 +1840,7 @@ function create_location_choices({location, category, add_icons = true, is_comba
             }
             
             action.classList.add("action_travel");
-            action.setAttribute("data-travel", available_challenges[i].location.name);
+            action.setAttribute("data-travel", available_challenges[i].location.id || available_challenges[i].location.name);
             action.setAttribute("onclick", "change_location(this.getAttribute('data-travel'));");
     
             choice_list.push(action);
@@ -1900,10 +1909,10 @@ function create_location_types_display(current_location){
     {
         const type_div = document.createElement("div");
         let c_halo = current_location.enemy_stat_halo;
-        if(current_location.name == "纳家秘境 - ∞"){
+        if(current_location.name == "Na Family Secret Realm - ∞"){
             c_halo = inf_combat.A6.cur * 0.08;
         }
-        if(current_location.name.includes("赫尔沼泽")){
+        if(current_location.name.includes("Hel Swamp")){
             inf_combat.B3 = inf_combat.B3 || 0;
             c_halo = inf_combat.B3 * 0.01;
         }
