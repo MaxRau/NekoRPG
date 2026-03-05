@@ -1105,7 +1105,7 @@ function start_textline(textline_key){
     }
     for(let i = 0; i < textline.unlocks.items.length; i++) {
         let item_id = textline.unlocks.items[i].item_name;
-        log_message(`${character.name} obtained "${item_id}"`);
+        log_message(`${character.name} obtained "${item_templates[item_id]?.getName?.() ?? item_id}"`);
         
         if(textline.unlocks.items[i].quality != undefined) add_to_character_inventory([{item: getItem({...item_templates[item_id], quality: textline.unlocks.items[i].quality})}]);
         else  add_to_character_inventory([{item: item_templates[item_id]}]);

@@ -3887,7 +3887,7 @@ function create_new_levelary_entry(level_name) {
 
 
     const name_div = document.createElement("div");
-    name_div.innerHTML = level_name;
+    name_div.innerHTML = level.name;
     name_div.classList.add("bestiary_entry_name");
     const kill_counter = document.createElement("div");
     kill_counter.innerHTML = `${Math.floor(level.rank/100)+1} - ${Math.floor((level.rank%100)/10)+1} - ${level.rank%10}`;
@@ -3961,7 +3961,7 @@ function create_new_levelary_entry(level_name) {
             if(lootlist[I_name] == undefined)
             {
                 lootlist[I_name] = 1;
-                tooltip_loots.innerHTML += `[ ${I_name} ] - ${format_percent(I_list[I_name] * character.stats.full.luck / level.enemies_list.length)} <br>`
+                tooltip_loots.innerHTML += `[ ${item_templates[I_name]?.getName?.() ?? I_name} ] - ${format_percent(I_list[I_name] * character.stats.full.luck / level.enemies_list.length)} <br>`
             }
         }
         //tooltip_enemies.innerHTML += `<img src=${enemy_templates[level.enemies_list[j]].image}>`;
