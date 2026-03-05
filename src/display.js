@@ -3870,8 +3870,12 @@ function reload_bestiary(){
 
 function create_new_levelary_entry(level_name) {
     levelary_entry_divs[level_name] = document.createElement("div");
-    
-    const level = locations[level_name];
+
+    const level = locations[level_name] || Object.values(locations).find(l => l.name === level_name);
+    if(!level) {
+        console.error(`create_new_levelary_entry: no location found for '${level_name}'`);
+        return;
+    }
 
 
     const name_div = document.createElement("div");
@@ -3908,10 +3912,10 @@ function create_new_levelary_entry(level_name) {
     if(level.enemy_stat_halo != 0)
     {
         let c_halo = level.enemy_stat_halo;
-        if(level_name == "纳家秘境 - ∞"){
+        if(level.id == "纳家秘境 - ∞"){
             c_halo = inf_combat.A6.cur * 0.08;
         }
-        if(level_name.includes("赫尔沼泽")){
+        if(level.id?.includes("赫尔沼泽")){
             inf_combat.B3 = inf_combat.B3 || 0;
             c_halo = inf_combat.B3 * 0.01;
         }

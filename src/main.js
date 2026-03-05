@@ -1367,13 +1367,13 @@ function do_enemy_attack_loop(enemy_id, count, E_round = 1,isnew = false) {//E_r
                 if(current_enemies != null) if(current_enemies[enemy_id].spec.includes(20)){//天剑
                     do_enemy_combat_action(enemy_id,"[Heaven Blade]"+Spec_S,1.5,2);
                 }
-                if(current_enemies[enemy_id].spec.includes(36) && E_round == 20){//自爆
+                if(current_enemies != null) if(current_enemies[enemy_id].spec.includes(36) && E_round == 20){//自爆
                     do_enemy_combat_action(enemy_id,"[Self-Destruct]"+Spec_S,0);
                 }
-                if(current_enemies[enemy_id].spec.includes(45) && E_round == 10){//10回合
+                if(current_enemies != null) if(current_enemies[enemy_id].spec.includes(45) && E_round == 10){//10回合
                     do_enemy_combat_action(enemy_id,Spec_S,0);
                 }
-                if(current_enemies[enemy_id].spec.includes(38) && E_round == 9)//冰符咒
+                if(current_enemies != null) if(current_enemies[enemy_id].spec.includes(38) && E_round == 9)//冰符咒
                 {
                     do_enemy_combat_action(enemy_id,"[Ice Rune Curse]"+Spec_S,20);
                 }
@@ -2150,10 +2150,12 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
         }//反戈
     } else {
         const effect = document.getElementById(`E${target_num}_effect`);
+        if(effect) {
             effect.classList.add('evade');
-                effect.addEventListener('animationend', () => {
-                       effect.classList.remove('evade');
-                }, { once: true });
+            effect.addEventListener('animationend', () => {
+                effect.classList.remove('evade');
+            }, { once: true });
+        }
 
         //闪避
         if(target.spec.includes(29)){
