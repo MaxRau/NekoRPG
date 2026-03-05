@@ -666,10 +666,11 @@ function end_activity() {
         activity_data.activity.is_unlocked = true;
         
         let message = "";
-        if(locations[activity_data.location].activities[activity_data.activity.activity_name].unlock_text) {
-           message = locations[activity_data.location].activities[activity_data.activity.activity_name].unlock_text+":<br>";
+        const loc = locations[activity_data.location] || Object.values(locations).find(l => l.name === activity_data.location);
+        if(loc?.activities[activity_data.activity.activity_name].unlock_text) {
+           message = loc.activities[activity_data.activity.activity_name].unlock_text+":<br>";
         }
-        log_message(message + `Unlocked activity "${activity_data.activity.activity_name}" - "${activity_data.location}"`, "activity_unlocked");
+        log_message(message + `Unlocked activity "${activity_data.activity.activity_name}" - "${loc?.name || activity_data.location}"`, "activity_unlocked");
     }
 }
 
@@ -1153,7 +1154,7 @@ function start_textline(textline_key){
 
     if(textline.unlocks.activities) { //unlocking activities
         for(let i = 0; i < textline.unlocks.activities.length; i++) { //unlock 
-            unlock_activity({location: locations[textline.unlocks.activities[i].location].name, 
+            unlock_activity({location: textline.unlocks.activities[i].location,
                              activity: locations[textline.unlocks.activities[i].location].activities[textline.unlocks.activities[i].activity]});
         }
     }
@@ -2554,7 +2555,7 @@ function get_location_rewards(location) {
                 return;
             }
 
-        unlock_activity({location: locations[location.repeatable_reward.activities[i].location].name, 
+        unlock_activity({location: location.repeatable_reward.activities[i].location,
                             activity: locations[location.repeatable_reward.activities[i].location].activities[location.repeatable_reward.activities[i].activity]});
     }
 
@@ -2730,14 +2731,16 @@ function use_recipe(target,stated = false) {
                 
                 recipe_div.children[1].children[0].children[1].children[0].classList.add('selected_component');
                 component_1_key = recipe_div.children[1].children[0].children[1].querySelector(".selected_component")?.dataset.item_key;
-                if(!stated) log_message(`Auto-switched material: ${component_1_key}`, "crafting");
+                const component_1_name = recipe_div.children[1].children[0].children[1].querySelector(".selected_component")?.dataset.item_name;
+                if(!stated) log_message(`Auto-switched material: ${component_1_name}`, "crafting");
             }
             if(!component_2_key && (recipe_div.children[1].children[1].children[1].children[0] !== undefined))
             {
-                
+
                 recipe_div.children[1].children[1].children[1].children[0].classList.add('selected_component');
                 component_2_key = recipe_div.children[1].children[1].children[1].querySelector(".selected_component")?.dataset.item_key;
-                if(!stated) log_message(`Auto-switched material: ${component_2_key}`, "crafting");
+                const component_2_name = recipe_div.children[1].children[1].children[1].querySelector(".selected_component")?.dataset.item_name;
+                if(!stated) log_message(`Auto-switched material: ${component_2_name}`, "crafting");
             }
             if(!component_1_key || !component_2_key) {
                 return -1;
