@@ -2679,7 +2679,7 @@ class Enemy {
             //应为1.6Z
         ],
     });
-    enemy_templates["行脚商人"] = new Enemy({
+    enemy_templates["Traveling Merchant"] = new Enemy({
         name: "Traveling Merchant",
         description: "Seems to be the leader of those sailors from before. He's also opened a shop nearby... worth a visit~",
         xp_value: 17711, 

@@ -70,36 +70,36 @@ const backup_key = "backup save";
 const dev_backup_key = "dev backup save";
 
 window.REALMS=[
-[0,"微尘级初级",0,0,0,"basic"],
-[1,"微尘级中级",1,50,5,"basic"],
-[2,"微尘级高级",3,200,100,"basic"],
-[3,"万物级初等",6,700,1200,"basic"],//0.1spd 
-[4,"万物级高等",12,3000,4800,"basic"],
-[5,"万物级巅峰",25,6000,16000,"basic"],
-[6,"潮汐级初等",40,10000,36000,"basic"],//0.1spd
-[7,"潮汐级高等",100,20000,120000,"basic"],
-[8,"潮汐级巅峰",250,40000,2400000,"basic"],
+[0,"Dust Rank: Novice",0,0,0,"basic"],
+[1,"Dust Rank: Adept",1,50,5,"basic"],
+[2,"Dust Rank: Expert",3,200,100,"basic"],
+[3,"Myriad Rank: Novice",6,700,1200,"basic"],//0.1spd
+[4,"Myriad Rank: Expert",12,3000,4800,"basic"],
+[5,"Myriad Rank: Pinnacle",25,6000,16000,"basic"],
+[6,"Tidal Rank: Novice",40,10000,36000,"basic"],//0.1spd
+[7,"Tidal Rank: Expert",100,20000,120000,"basic"],
+[8,"Tidal Rank: Pinnacle",250,40000,2400000,"basic"],
 
-[9,"大地级一阶",600,120000,60000000,"terra"],
-[10,"大地级二阶",1000,250000,80000000,"terra"],
-[11,"大地级三阶",2000,550000,1.6e8,"terra"],
-[12,"大地级四阶",3000,1000000,4.8e8,"terra"],//200w
-[13,"大地级五阶",5000,1500000,12e8,"terra"],//350w
-[14,"大地级六阶",9000,2500000,36e8,"terra"],//600w
-[15,"大地级七阶",16000,6500000,108e8,"terra"],//1250w
-[16,"大地级八阶",32000,12500000,216e8,"terra"],//2500w
-[17,"大地级巅峰",60000,22500000,432e8,"terra"],
-[18,"大地级破限",150000,32500000,1080e8,"terra"],
+[9,"Earth Rank: Stage 1",600,120000,60000000,"terra"],
+[10,"Earth Rank: Stage 2",1000,250000,80000000,"terra"],
+[11,"Earth Rank: Stage 3",2000,550000,1.6e8,"terra"],
+[12,"Earth Rank: Stage 4",3000,1000000,4.8e8,"terra"],//200w
+[13,"Earth Rank: Stage 5",5000,1500000,12e8,"terra"],//350w
+[14,"Earth Rank: Stage 6",9000,2500000,36e8,"terra"],//600w
+[15,"Earth Rank: Stage 7",16000,6500000,108e8,"terra"],//1250w
+[16,"Earth Rank: Stage 8",32000,12500000,216e8,"terra"],//2500w
+[17,"Earth Rank: Pinnacle",60000,22500000,432e8,"terra"],
+[18,"Earth Rank: Breakthrough",150000,32500000,1080e8,"terra"],
 
-[19,"天空级一阶",150000,1.2e8,10000e8,"sky"],//2e
-[20,"天空级二阶",500000,3e8,4e12,"sky"],//5e
-[21,"天空级三阶",1500000,10e8,16e12,"sky"],//15e
-[22,"天空级四阶",4000000,25e8,80e12,"sky"],//40e 
-[23,"天空级五阶",16000000,60e8,320e12,"sky"],//100e 经验应为320e12.
-[24,"天空级六阶",40000000,150e8,170.1411e36,"sky"],//250e 
-[25,"天空级七阶",70000000,350e8,6000e12,"sky"],//600e
-[26,"天空级八阶",3e8,900e8,2.4e16,"sky"],//1500e
-[27,"天空级巅峰",8e8,1500e8,9.6e16,"sky"],//3000e
+[19,"Sky Rank: Stage 1",150000,1.2e8,10000e8,"sky"],//2e
+[20,"Sky Rank: Stage 2",500000,3e8,4e12,"sky"],//5e
+[21,"Sky Rank: Stage 3",1500000,10e8,16e12,"sky"],//15e
+[22,"Sky Rank: Stage 4",4000000,25e8,80e12,"sky"],//40e
+[23,"Sky Rank: Stage 5",16000000,60e8,320e12,"sky"],//100e 经验应为320e12.
+[24,"Sky Rank: Stage 6",40000000,150e8,170.1411e36,"sky"],//250e
+[25,"Sky Rank: Stage 7",70000000,350e8,6000e12,"sky"],//600e
+[26,"Sky Rank: Stage 8",3e8,900e8,2.4e16,"sky"],//1500e
+[27,"Sky Rank: Pinnacle",8e8,1500e8,9.6e16,"sky"],//3000e
 
 ];
 //境界，X级存储了该等级的数据
@@ -335,22 +335,47 @@ const musicList = {
 
 let hasPlayed = false;  // 确保只触发一次
 let enableBGM = true;
+let bgmUnlockedByUser = false;
 
-function switchBGM(key) {
-    if(!enableBGM) return;
-    if (!hasPlayed) {
+function unlockBGMPlayback() {
+    bgmUnlockedByUser = true;
+
+    if(enableBGM && bgm.src) {
         hasPlayed = true;
         bgm.play().catch(error => {
             console.log("播放失败:", error);
             hasPlayed = false;
         });
     }
-  if (bgm.src.includes(musicList[key]) && bgm.src.length >= 5 && musicList[key].length >= 5) return;  // 已是当前音乐
-  bgm.pause();
-  bgm.src = musicList[key];
-  bgm.load();             // 重新加载新资源
-  bgm.volume = 0.5;
-  bgm.play();
+}
+
+window.addEventListener("pointerdown", unlockBGMPlayback, {once: true});
+window.addEventListener("keydown", unlockBGMPlayback, {once: true});
+
+function switchBGM(key) {
+    if(!enableBGM) return;
+    const track = musicList[key];
+    if(!track) return;
+
+    if (!(bgm.src.includes(track) && bgm.src.length >= 5 && track.length >= 5)) {
+        bgm.pause();
+        bgm.src = track;
+        bgm.load();
+    }
+
+    bgm.volume = 0.5;
+
+    if(!bgmUnlockedByUser) {
+        return;
+    }
+
+    if(!hasPlayed || bgm.paused) {
+        hasPlayed = true;
+        bgm.play().catch(error => {
+            console.log("播放失败:", error);
+            hasPlayed = false;
+        });
+    }
 }
 
 
@@ -376,20 +401,24 @@ function option_uniform_textsize(option) {
 
 
 function change_location(location_name) {
-    let location = locations[location_name];
+    let location = locations[location_name] || Object.values(locations).find(existing_location => {
+        return existing_location?.name === location_name || existing_location?.id === location_name;
+    });
+
+    if(!location) {
+        console.warn(`No such location as "${location_name}"`);
+        return;
+    }
+
     if(location.bgm != "") switchBGM(location.bgm);
 
-    if(location_name !== current_location?.name && location.is_finished) {
+    if(location.name !== current_location?.name && location.is_finished) {
         return;
     }
 
     clear_all_enemy_attack_loops();
     clear_character_attack_loop();
     clear_enemies();
-
-    if(!location) {
-        throw `No such location as "${location_name}"`;
-    }
 
     if(typeof current_location !== "undefined" && current_location.name !== location.name ) { 
         //so it's not called when initializing the location on page load or on reloading current location (due to new unlocks)
@@ -793,7 +822,7 @@ function textline_special(t_key){
             if(a4_realm >= 12) displayed_text = `都到大地级中期了还不去？<br>再这样出去别说你是我女儿！<br>` ;
             else displayed_text = `你的自创剑法，<br>足以令你发挥出超过大地级五阶的实力。<br>` ;
 
-            if(enemy_killcount["百方[荒兽森林 ver.][BOSS]"]) displayed_text += "...等会，百方已经被你揍哭了???<br>";
+            if(enemy_killcount["Baifang [Wild Beast Forest ver.] [BOSS]"]) displayed_text += "...等会，百方已经被你揍哭了???<br>";
             else displayed_text += "待你历练有成，那区区百方，自是不足为惧！<br>";
 
             displayed_text += "家族秘境，每半年开启一次。<br>这段时间，你就留在家族，<br>巩固你当前的境界实力吧。";
@@ -878,7 +907,7 @@ function textline_special(t_key){
             else{
                 displayed_text += `基于 ${format_number(C_HP)} 的生命力，<br>赐福一次的耗费为 ${format_money(Math.round(C_HP ** 1.35))}<br>`;
                 let C_moon = current_game_time.moon();
-                let MM1 = ["新月","蛾眉月","上弦月","盈凸月","满月","亏凸月","下弦月","残月"];
+                let MM1 = ["New Moon","Crescent Moon","First Quarter","Waxing Gibbous","Full Moon","Waning Gibbous","Last Quarter","Waning Crescent"];
                 let MM2 = ["生命恢复 1%","生命上限 x 1.5","暴击伤害 x 1.6","普攻倍率 x 1.4","攻击力 x 1.1","防御力 x 1.2","敏捷 x 1.2","速度 x 1.1"];
                 displayed_text += `<br>目前的月相为 ${MM1[C_moon]}，<br>赐福内容为 ${MM2[C_moon]}.(1800s)`
                 displayed_text += `<br>⚠️接受皎月祝福会清空原有状态效果⚠️`;
@@ -905,9 +934,9 @@ function textline_special(t_key){
                     Object.keys(active_effects).forEach(key => {
                         delete active_effects[key];
                     });
-                    let MM3 = ["新月","蛾眉月","上弦月","盈凸月","满月","亏凸月","下弦月","残月"];
+                    let MM3 = ["New Moon","Crescent Moon","First Quarter","Waxing Gibbous","Full Moon","Waning Gibbous","Last Quarter","Waning Crescent"];
                     let C_moon = current_game_time.moon();
-                    let moon_effect = "皎月祝福·"+MM3[C_moon];
+                    let moon_effect = "Moonlight Blessing: "+MM3[C_moon];
                     active_effects[moon_effect] = new ActiveEffect({...effect_templates[moon_effect], duration:1800});
                     
                     character.stats.add_active_effect_bonus();
@@ -924,7 +953,7 @@ function textline_special(t_key){
         }
         else if(t_key == "jjhzx"){
 
-            if(character.equipment.special?.name == "结界湖之心")
+            if(character.equipment.special?.name == "Boundary Lake Heart")
             {
                 character.equipment.special = null;
                 add_to_character_inventory([{item: item_templates["结界湖之心·材"], count: 1}]);
@@ -937,7 +966,7 @@ function textline_special(t_key){
             else displayed_text += `请将【结界湖之心】佩戴后再次尝试！`;
         }
         else if(t_key == "3-1-nanami"){
-            if(character.equipment.special?.name == "纳娜米(飞船)") displayed_text += `(摸)可可,天空级一般来说不会发烧了哦。<br>她不是一直被你拽在身边，不肯放走吗?<br>`;
+            if(character.equipment.special?.name == "Nanami (Spaceship)") displayed_text += `(摸)可可,天空级一般来说不会发烧了哦。<br>她不是一直被你拽在身边，不肯放走吗?<br>`;
             else displayed_text += `是啊，迫不及待就离开了。<br>娜娜这孩子，也有一颗强者的心啊。<br>`;
 
             let hx_money = 1e18 / (current_game_time.day_count ** 2); 
@@ -1456,7 +1485,7 @@ function do_character_attack_loop({base_cooldown, actual_cooldown, attack_power,
 
             for(let i = 0; i < targets.length; i++) {
                 let alive_targets = current_enemies.filter(enemy => enemy.is_alive);
-                if(active_effects["回风 A9"]!=undefined)
+                if(active_effects["Whirlwind A9"]!=undefined)
                 {
                     do_character_combat_action({target: targets[i], attack_power}, alive_targets.length - 1,0.8,"[回风-弱]");
                     alive_targets = current_enemies.filter(enemy => enemy.is_alive);
@@ -1617,7 +1646,7 @@ function do_enemy_combat_action(enemy_id,spec_hint,E_atk_mul = 1,E_dmg_mul = 1) 
     }//自爆/残余血量都爆了
     if(attacker.spec.includes(45) && E_atk_mul == 0)//标记
     {
-        if(character.equipment.special?.name == "纳娜米(飞船)")//姐姐在！
+        if(character.equipment.special?.name == "Nanami (Spaceship)")//姐姐在！
         {
             log_message(`几乎零点一秒之内，纳娜米手中的武器，绽放出耀眼的银白色光芒。只听轰隆一声巨响，整座飞船都似乎为之震颤！`,"enemy_enhanced");
             log_message(`遭到反震力冲击的纳娜米纹丝不动。比起地宫之行的时候，她已经提高了足足七阶修为，不再会被区区反冲力给轰吐血了。`,"enemy_enhanced");
@@ -1650,7 +1679,7 @@ function do_enemy_combat_action(enemy_id,spec_hint,E_atk_mul = 1,E_dmg_mul = 1) 
             return;
         }
     }//激光
-    if(active_effects["灵闪 B9"]!=undefined){
+    if(active_effects["Spirit Flash B9"]!=undefined){
         if(attacker.stats.attack < character.stats.full.attack_power * 2){
             spec_mul *= (1 - 0.5 *character.stats.full.defense / attacker.stats.defense);
             spec_mul = Math.max(spec_mul,0);
@@ -1660,7 +1689,7 @@ function do_enemy_combat_action(enemy_id,spec_hint,E_atk_mul = 1,E_dmg_mul = 1) 
             spec_hint += '[灵闪·逆]';
         }
     }
-    if(active_effects["散华 B9"]!=undefined){
+    if(active_effects["Scatter B9"]!=undefined){
         E_atk_mul_f *= Math.max(( 1 - ((character.stats.full.health/attacker.stats.health) ** 0.5) * 0.1),0);
         spec_hint += '[散华^1/2]';
     }
@@ -1745,7 +1774,7 @@ function do_enemy_combat_action(enemy_id,spec_hint,E_atk_mul = 1,E_dmg_mul = 1) 
     }//回春
 
     if(fainted) faint(" 失败了");
-    else if(active_effects["反戈 B9"]!=undefined){
+    else if(active_effects["Reversal B9"]!=undefined){
         attacker.stats.health -= damage_taken * 0.50;
         log_message(attacker.name + " 受到了 " + format_number(damage_taken * 0.50)  + " 点反弹伤害","hero_attacked");
         //attacker受到damage_taken点伤害
@@ -1942,17 +1971,17 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
             add_xp_to_skill({skill: skills['Neko_Realm'], xp_to_add: damage_dealt});//战斗领悟(领域)
             update_neko_realm();
         }
-        if(active_effects["魔攻 A9"]!=undefined && damage_dealt < proto_d * 0.1)
+        if(active_effects["Magic Attack A9"]!=undefined && damage_dealt < proto_d * 0.1)
         {
             damage_dealt = proto_d * 0.1;
             Spec_E += "[魔攻]";
         }
-        if(active_effects["牵制 A9"]!=undefined)
+        if(active_effects["Suppression A9"]!=undefined)
         {
             sdmg_mul *= Math.min(character.stats.full.defense / (target.stats.defense + 0.0001) * 0.6,10);
             Spec_E += "[牵制]";
         }
-        if(active_effects["异界之门 B9"]!=undefined)
+        if(active_effects["Void Gate B9"]!=undefined)
         {
             target.stats.spec_value ||= {};
             
@@ -1965,7 +1994,7 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
 
         if(target.spec.includes(1))
         {
-            if(character.equipment.special?.name == "纳娜米"){
+            if(character.equipment.special?.name == "Nanami"){
                 damage_dealt=Math.min(damage_dealt,4.0);//坚固
                 Spec_E += "[坚固·削弱]"
             }
@@ -2040,9 +2069,9 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
                 add_to_character_inventory(loot);
             }
             
-            if(target.name == "地宫养殖者[BOSS]")//没收姐姐
+            if(target.name == "Dungeon Breeder [BOSS]")//没收姐姐
             {
-                if(character.equipment.special?.name == "纳娜米")
+                if(character.equipment.special?.name == "Nanami")
                 {
                     character.equipment.special = null;
                     log_message(`装备槽里的姐姐回家了！`,"enemy_enhanced");
@@ -2056,7 +2085,7 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
                     remove_from_character_inventory([{item_key:"{\"id\":\"纳娜米\",\"quality\":100}"}]);
                     log_message(`物品栏里的姐姐回家了！`,"enemy_enhanced");
                 }
-                else if(enemy_killcount["地宫养殖者[BOSS]"] <= 1)
+                else if(enemy_killcount["Dungeon Breeder [BOSS]"] <= 1)
                 {
                     log_message(`[纱雪]诶诶，怎么哪里都找不到姐姐啊。`,"sayuki");
                     log_message(`[纱雪]真的打掉了那只100倍属性的地宫耶！好厉害！`,"sayuki");
@@ -2072,9 +2101,9 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
                 //unlock_location("荒兽森林营地");
 
             }
-            if(target.name == "舰船中枢B6[BOSS]")//没收姐姐2.0
+            if(target.name == "Ship Core B6 [BOSS]")//没收姐姐2.0
             {
-                if(character.equipment.special?.name == "纳娜米(飞船)")
+                if(character.equipment.special?.name == "Nanami (Spaceship)")
                 {
                     character.equipment.special = null;
                     log_message(`装备槽里的姐姐回家了！`,"enemy_enhanced");
@@ -2088,7 +2117,7 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
                     remove_from_character_inventory([{item_key:"{\"id\":\"纳娜米(飞船)\",\"quality\":130}"}]);
                     log_message(`物品栏里的姐姐回家了！`,"enemy_enhanced");
                 }
-                else if(enemy_killcount["舰船中枢B6[BOSS]"] <= 1)
+                else if(enemy_killcount["Ship Core B6 [BOSS]"] <= 1)
                 {
                     log_message(`[纱雪]诶诶，怎么哪里都找不到姐姐啊。`,"sayuki");
                     log_message(`[纱雪]真的打掉了那只4200亿血的中枢耶！好厉害！`,"sayuki");
@@ -2098,7 +2127,7 @@ function do_character_combat_action({target, attack_power}, target_num,c_atk_mul
                 
                 update_displayed_character_inventory({was_anything_new_added:true});
                 //unlock_location("荒兽森林营地");
-                if(enemy_killcount["舰船中枢B6[BOSS]"] <= 1){
+                if(enemy_killcount["Ship Core B6 [BOSS]"] <= 1){
                     current_game_time.go_up(1080000);
                     //2年
                 }
@@ -2157,7 +2186,7 @@ function kill_enemy(target) {
         } else {
             enemy_killcount[target.name] = 1;
             create_new_bestiary_entry(target.name);
-            if(target.name == "毛茸茸") add_bestiary_lines(11);
+            if(target.name == "Fluffy") add_bestiary_lines(11);
             add_bestiary_zones(target.name);
         }
     }
@@ -2350,17 +2379,17 @@ function get_spec_rewards(money){
     
     character.money += Math.floor(RNG_M * money);
     update_displayed_money();
-    const trader = traders["废墟商人"];
+    const trader = traders["Ruins Merchant"];
     if(!trader.is_unlocked) {
         if(Math.random() >= money * 2e-7) {//4% 8% 12% 16% 20%
             trader.is_unlocked = true;
-            log_message(`解锁了 [废墟商人]`, "location_reward");
+            log_message(`解锁了 [Ruins Merchant]`, "location_reward");
         }
         else if(Math.random() >= money * 5e-7){
             log_message(`${character.name} 感到附近有财富与交易的气息 ....`, "location_reward");
         }//6 12 18 24 30
     }
-    //TODO:增加废墟商人的解锁，并且在已经解锁之后不再提示。
+    //TODO:增加Ruins Merchant的解锁，并且在已经解锁之后不再提示。
 
 }
 /**
@@ -2385,7 +2414,7 @@ function get_location_rewards(location) {
             create_new_levelary_entry(location.name);
             log_message(`首次通过 ${location.name} ，获取 ${location.first_reward.xp} 经验 `, "location_reward");
             add_xp_to_character(location.first_reward.xp);
-            if(location.name == "荒兽森林 - 1"){
+            if(location.name == "Wild Beast Forest - 1"){
                 log_message(`在战斗中，${character.name} 获取了突破大地级的感悟。`, "enemy_enhanced");
                 add_to_character_inventory([{item: item_templates["凝实荒兽森林感悟"], count: 1}]);
             }
@@ -2393,7 +2422,7 @@ function get_location_rewards(location) {
     } else if(location.repeatable_reward.xp && typeof location.repeatable_reward.xp === "number") {
         log_message(`通过 ${location.name} ，获取额外 ${location.repeatable_reward.xp} 经验 `, "location_reward");
         add_xp_to_character(location.repeatable_reward.xp);
-        if(location.name.includes("荒兽森林") && (Math.random()<0.1) && character.xp.current_level <= 8){
+        if(location.name.includes("Wild Beast Forest") && (Math.random()<0.1) && character.xp.current_level <= 8){
             log_message(`在战斗中，${character.name} 再次随机地获取了突破大地级的感悟。`, "enemy_enhanced");
             add_to_character_inventory([{item: item_templates["凝实荒兽森林感悟"], count: 1}]);
         }
@@ -2456,7 +2485,7 @@ function get_location_rewards(location) {
                             activity: locations[location.repeatable_reward.activities[i].location].activities[location.repeatable_reward.activities[i].activity]});
     }
 
-    if(location.name == "纳家秘境 - ∞" && Math.floor(inf_combat.A6.cur * 1.25) > inf_combat.A6.cap){
+    if(location.name == "Na Family Secret Realm - ∞" && Math.floor(inf_combat.A6.cur * 1.25) > inf_combat.A6.cap){
         inf_combat.A6.cap = Math.floor(inf_combat.A6.cur * 1.25);
         log_message(`灵阵强度上限解放： ${inf_combat.A6.cur} -> ${inf_combat.A6.cap} ！`, "dialogue_unlocked");
     }
@@ -4271,7 +4300,7 @@ function start_reactor_minigame()
         {
             reactor_able = false;
             log_message("反应堆因温度过高熔毁了！！！","enemy_attacked_critically");
-            active_effects["辐射"] = new ActiveEffect({...effect_templates["辐射"], duration:Math.round(100 * inf_combat.RT.ER ** 0.333)});
+            active_effects["Radiation"] = new ActiveEffect({...effect_templates["Radiation"], duration:Math.round(100 * inf_combat.RT.ER ** 0.333)});
             update_displayed_effects();
             character.stats.add_active_effect_bonus();
             update_character_stats();

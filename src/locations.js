@@ -860,7 +860,7 @@ function get_location_type_penalty(type, stage, stat) {
         connected_locations:[],
         
         description: "A bright and tidy hall, the place where Nako usually spends her time.",
-        traders: ["自动售货机"],
+        traders: ["Vending Machine"],
         dialogues: ["猫妖"],
         name: "Na Family Hall",
     });//1-1
@@ -1127,7 +1127,7 @@ function get_location_type_penalty(type, stage, stat) {
 
         bgm: 2,
         dialogues: ["秘法石碑 - 1","路人甲"],
-        traders: ["燕岗杂货铺"],
+        traders: ["Yangang General Store"],
         is_unlocked: false,
         unlock_text: "No matter how many times you see it, the city's splendor is always striking. But right now, leaving the city as fast as possible is what matters!",
         name: "Yangang City",
@@ -1492,7 +1492,7 @@ function get_location_type_penalty(type, stage, stat) {
     locations["燕岗矿井"] = new Location({ 
         connected_locations: [{location: locations["燕岗近郊"], custom_text: "Return to the treasure map route"}],
         description: "A cultivator settlement surrounding a mine, with a slightly better workbench than the practice one, a simple rest room, and some remaining A1-grade metal underground!",
-        traders: ["矿井集市"],
+        traders: ["Mine Market"],
 
         bgm: 3,
         is_unlocked: false,
@@ -1547,7 +1547,7 @@ function get_location_type_penalty(type, stage, stat) {
     locations["地宫浅层"] = new Location({ 
         connected_locations: [{location: locations["地宫入口"], custom_text: "Return to the entrance"}],
         description: "The shallow floors of the Dungeon. Infested with wild beasts, but also hiding many treasures.",
-        traders: ["金属批发商"],
+        traders: ["Metal Wholesaler"],
 
         is_unlocked: true,
         name: "Dungeon Shallow Floors",
@@ -1595,7 +1595,7 @@ function get_location_type_penalty(type, stage, stat) {
         repeatable_reward: {
             xp: 180,
             locations: [{location: "地宫 - 3"}],
-            traders: [{traders:"金属批发商"}],
+            traders: [{traders:"Metal Wholesaler"}],
         },
         unlock_text: "Should I go back and call for family backup? That would take too much time, and my sister would be in danger. No, now isn't the time to think about that."
     });
@@ -1847,7 +1847,7 @@ function get_location_type_penalty(type, stage, stat) {
     locations["光幕空间"] = new Location({ 
         connected_locations: [{location: locations["地宫深层"], custom_text: "Return to the wild beast sea of the Dungeon"}],
         description: "A safe area behind the blue-purple barrier. The barrier itself has a \"refining\" ability and can also be used as a workbench.",
-        //traders: ["矿井集市"],
+        //traders: ["Mine Market"],
         
         bgm: 5,
         is_unlocked: false,
@@ -1909,7 +1909,7 @@ function get_location_type_penalty(type, stage, stat) {
         is_unlocked: false,
         name: "Wild Beast Forest Camp",
         dialogues: ["纳布"],
-        traders: ["营地商铺"],
+        traders: ["Camp Shop"],
         bgm: 6,
         //unlock_text: "好阴森的气息。这里不像是一个强者留下的遗迹，因为强者在创造遗迹时，一般都会留下引导。"
     });//2-1安全区
@@ -2054,7 +2054,7 @@ function get_location_type_penalty(type, stage, stat) {
         connected_locations: [{location: locations["荒兽森林营地"], custom_text: "Take the small path, return to camp"}],
         description: "Following this river back leads to the family estate... hurry and report this to Father!",
 
-        traders: ["行脚商人"],
+        traders: ["Traveling Merchant"],
         dialogues: ["清野瀑布","纳布(江畔)"],
         name: "Qingye Riverbank",
         is_unlocked: false,
@@ -2121,13 +2121,13 @@ function get_location_type_penalty(type, stage, stat) {
         repeatable_reward: {
             xp: 6400,
             locations: [{location: "清野江畔 - 4"}],
-            traders: [{traders:"行脚商人"}],
+            traders: [{traders:"Traveling Merchant"}],
         },
     });
     locations["清野江畔 - 4"] = new Combat_zone({
         description: "Along the Qingye River, on the way home. Wild beast strength has greatly increased, but the family estate is no longer far - no need to linger in battle.",
         enemy_count: 20, 
-        enemies_list: ["马里奥菇菇","极冰火","清野江窃贼","礁石灵","火烧云","行脚商人"],
+        enemies_list: ["马里奥菇菇","极冰火","清野江窃贼","礁石灵","火烧云","Traveling Merchant"],
         enemy_group_size: [1.5,2.5],
         types: [],
         is_unlocked: false, 
@@ -2204,7 +2204,7 @@ function get_location_type_penalty(type, stage, stat) {
         connected_locations: [{location: locations["清野江畔"], custom_text: "Return to the Qingye Riverbank area to train"}],
         description: "A secret training realm built by the Na Family. Contains an advanced workbench, rest area, and a storage room.",
 
-        traders: ["物品存储箱"],
+        traders: ["Storage Chest"],
         sleeping: {
             text: "Meditate and restore energy [+100XP/s]",
             xp: 10
@@ -2262,7 +2262,7 @@ function get_location_type_penalty(type, stage, stat) {
     locations["纳家秘境 - 2"] = new Combat_zone({
         description: "The Na Family's secret training realm. This is the outer area.",
         enemy_count: 20, 
-        enemies_list: ["火烧云","行脚商人","大门派杂役","高歌骸骨","燕岗高等散修"],
+        enemies_list: ["火烧云","Traveling Merchant","大门派杂役","高歌骸骨","燕岗高等散修"],
         enemy_group_size: [1.5,2.5],
         types: [],
         is_unlocked: false, 
@@ -2533,7 +2533,7 @@ function get_location_type_penalty(type, stage, stat) {
         connected_locations: [{location: locations["纳家秘境"], custom_text: "Travel back to the family's secret realm"}],
         description: "The ruins of Shenglv City, destroyed by a D9-class spaceship. Many useful treasures are hidden in the chaos.",
 
-        traders: ["废墟商人"],
+        traders: ["Ruins Merchant"],
         dialogues: ["纳娜米(废墟)","声律城难民"],
         name: "Shenglv City Ruins",
         is_unlocked: false,
@@ -2682,7 +2682,7 @@ function get_location_type_penalty(type, stage, stat) {
         name: "Rune House",
         is_unlocked: false,
         bgm: 10,
-        traders: ["物品存储箱"],
+        traders: ["Storage Chest"],
         sleeping: {
             text: "Cultivate in the Rune House [+10,000XP/s]",
             xp: 100
@@ -2834,7 +2834,7 @@ function get_location_type_penalty(type, stage, stat) {
         connected_locations: [{location: locations["声律城战场"], custom_text: "Leave this spaceship for now"}],
         description: "The ultimate goal of the Shenglv City journey. It may contain treasures rare even on the Blood-Luo continent, yet everywhere it radiates hostility and killing intent toward outsiders.",
         name: "Outer-Space Spaceship",
-        traders: ["飞船集市"],
+        traders: ["Airship Market"],
         dialogues: ["纳娜米(飞船)","核心反应堆"],
         is_unlocked: false,
         bgm: 12,
@@ -2968,7 +2968,7 @@ function get_location_type_penalty(type, stage, stat) {
         bgm:12,
         parent_location: locations["天外飞船"],
         repeatable_reward: {
-            traders: [{traders:"飞船集市"}],
+            traders: [{traders:"Airship Market"}],
         },
         unlock_text: "Legend has it that beyond here is where the spaceship adventurers hold their exchange meet... I need to think of a way to defeat that blue thing!",
     });
@@ -3141,7 +3141,7 @@ function get_location_type_penalty(type, stage, stat) {
         name: "Spaceship Dormitory",
         is_unlocked: false,
         bgm: 13,
-        traders: ["物品存储箱"],
+        traders: ["Storage Chest"],
         sleeping: {
             text: "Use the outer-space energy-gathering array [+250,000XP/s]",
             xp: 500
@@ -3439,7 +3439,7 @@ function get_location_type_penalty(type, stage, stat) {
         name: "Feiyun Pavilion",
         is_unlocked: false,
         bgm: 1,//3-3的bgm是16 这个没打错 就是家里的bgm
-        traders: ["物品存储箱","百宝楼"],
+        traders: ["Storage Chest","Treasure Pavilion"],
         dialogues: ["峰(飞云)"],
         sleeping: {
             text: "Rest at Feiyun Pavilion [+360,000XP/s]",
