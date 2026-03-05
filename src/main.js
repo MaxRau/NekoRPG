@@ -1308,6 +1308,10 @@ function reset_combat_loops() {
 function do_enemy_attack_loop(enemy_id, count, E_round = 1,isnew = false) {//E_round:回合数
     count = count || 0;
     update_enemy_attack_bar(enemy_id, count);
+    if(!current_enemies?.[enemy_id] || !Array.isArray(current_enemies[enemy_id].spec)) {
+        clearTimeout(enemy_attack_loops[enemy_id]);
+        return;
+    }
     let Spec_S = "";
     if(current_enemies[enemy_id].spec.includes(0)) Spec_S += "[Magic ATK]";
     if(current_enemies[enemy_id].spec.includes(5)) Spec_S += "[Suppression]";
@@ -1377,6 +1381,19 @@ function do_enemy_attack_loop(enemy_id, count, E_round = 1,isnew = false) {//E_r
     enemy_attack_loops[enemy_id] = setTimeout(() => {
         if(current_enemies != null)
         {
+            if(!current_enemies[enemy_id]) {
+                clearTimeout(enemy_attack_loops[enemy_id]);
+                return;
+            }
+            if(!Array.isArray(enemy_timers[enemy_id])) {
+                enemy_timers[enemy_id] = [Date.now(), Date.now()];
+            }
+            if(typeof enemy_timer_variance_accumulator[enemy_id] !== "number") {
+                enemy_timer_variance_accumulator[enemy_id] = 0;
+            }
+            if(typeof enemy_timer_adjustment[enemy_id] !== "number") {
+                enemy_timer_adjustment[enemy_id] = 0;
+            }
             enemy_timers[enemy_id][0] = Date.now(); 
             enemy_timer_variance_accumulator[enemy_id] += ((enemy_timers[enemy_id][0] - enemy_timers[enemy_id][1]) - enemy_attack_cooldowns[enemy_id]*1000/(40*tickrate));
 
