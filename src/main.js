@@ -1094,7 +1094,15 @@ function textline_special(t_key){
  */
 function start_textline(textline_key){
     const dialogue = dialogues[current_dialogue];
+    if(!dialogue) {
+        console.warn(`[Dialogue] Missing current dialogue: ${current_dialogue}`);
+        return;
+    }
     const textline = dialogue.textlines[textline_key];
+    if(!textline) {
+        console.warn(`[Dialogue] Missing textline "${textline_key}" in dialogue "${current_dialogue}"`);
+        return;
+    }
 
     for(let i = 0; i < textline.unlocks.flags.length; i++) {
         const flag = global_flags[textline.unlocks.flags[i]];
@@ -1118,15 +1126,24 @@ function start_textline(textline_key){
     }
 
     for(let i = 0; i < textline.unlocks.dialogues.length; i++) { //unlocking dialogues
-        const dialogue = dialogues[textline.unlocks.dialogues[i]];
-        if(!dialogue.is_unlocked) {
-            dialogue.is_unlocked = true;
-            log_message(`You can now talk with ${dialogue.name}`, "activity_unlocked");
+        const unlocked_dialogue_key = textline.unlocks.dialogues[i];
+        const unlocked_dialogue = dialogues[unlocked_dialogue_key];
+        if(!unlocked_dialogue) {
+            console.warn(`[Dialogue] Missing unlock target dialogue: ${unlocked_dialogue_key}`);
+            continue;
+        }
+        if(!unlocked_dialogue.is_unlocked) {
+            unlocked_dialogue.is_unlocked = true;
+            log_message(`You can now talk with ${unlocked_dialogue.name}`, "activity_unlocked");
         }
     }
 
     for(let i = 0; i < textline.unlocks.traders.length; i++) { //unlocking traders
         const trader = traders[textline.unlocks.traders[i]];
+        if(!trader) {
+            console.warn(`[Dialogue] Missing unlock target trader: ${textline.unlocks.traders[i]}`);
+            continue;
+        }
         if(!trader.is_unlocked) {
             trader.is_unlocked = true;
             log_message(`Unlocked new trader: ${trader.name}`, "activity_unlocked");
@@ -1135,8 +1152,18 @@ function start_textline(textline_key){
 
     for(let i = 0; i < textline.unlocks.textlines.length; i++) { //unlocking textlines
         const dialogue_name = textline.unlocks.textlines[i].dialogue;
+        const unlock_dialogue = dialogues[dialogue_name];
+        if(!unlock_dialogue) {
+            console.warn(`[Dialogue] Missing dialogue while unlocking textlines: ${dialogue_name}`);
+            continue;
+        }
         for(let j = 0; j < textline.unlocks.textlines[i].lines.length; j++) {
-            dialogues[dialogue_name].textlines[textline.unlocks.textlines[i].lines[j]].is_unlocked = true;
+            const line_key = textline.unlocks.textlines[i].lines[j];
+            if(!unlock_dialogue.textlines[line_key]) {
+                console.warn(`[Dialogue] Missing textline "${line_key}" while unlocking from dialogue "${dialogue_name}"`);
+                continue;
+            }
+            unlock_dialogue.textlines[line_key].is_unlocked = true;
         }
     }
 
