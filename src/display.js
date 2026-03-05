@@ -3758,6 +3758,8 @@ function create_new_bestiary_entry(enemy_name) {
         const loot_chance = document.createElement("div");
         const loot_chance_base = document.createElement("div");
         const loot_chance_current = document.createElement("div");
+        const loot_item_key = enemy.loot_list[i].item_name;
+        const loot_item = item_templates[loot_item_key];
 
         loot_line.classList.add("loot_slot_div");
         loot_name.classList.add("loot_name");
@@ -3765,7 +3767,7 @@ function create_new_bestiary_entry(enemy_name) {
         loot_chance_base.classList.add("loot_chance_base");
         loot_chance_current.classList.add("loot_chance_current");
 
-        loot_name.innerHTML = `${enemy.loot_list[i].item_name}`;
+        loot_name.innerHTML = `${loot_item?.getName?.() ?? loot_item_key}`;
         loot_chance_base.innerHTML = `[${format_percent(enemy.loot_list[i].chance)}]`;
         loot_chance_current.innerHTML = `${enemy.loot_list[i].ignore_luck?("[Fixed]"):(format_percent(enemy.loot_list[i].chance*enemy.get_droprate_modifier()))}`;
         loot_chance.append(loot_chance_current, loot_chance_base);
