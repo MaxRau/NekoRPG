@@ -2616,8 +2616,11 @@ function create_gathering_tooltip(location_activity) {
     gathering_tooltip.innerHTML += `Every ${format_reading_time(gathering_time_needed)}, chance of finding:`;
     
     for(let i = 0; i < gained_resources.length; i++) {
+        const resource_key = gained_resources[i].name;
+        const resource_item = item_templates[resource_key];
+        const resource_name = resource_item?.getName?.() ?? resource_key;
         let chance = gained_resources[i].chance>0.01?Math.round(100*gained_resources[i].chance):"???";
-        gathering_tooltip.innerHTML += `<br>x${gained_resources[i].count[0]===gained_resources[i].count[1]?gained_resources[i].count[0]:`${gained_resources[i].count[0]}-${gained_resources[i].count[1]}`} "${gained_resources[i].name}" (${chance}%)`;
+        gathering_tooltip.innerHTML += `<br>x${gained_resources[i].count[0]===gained_resources[i].count[1]?gained_resources[i].count[0]:`${gained_resources[i].count[0]}-${gained_resources[i].count[1]}`} "${resource_name}" (${chance}%)`;
     }
     
     if(location_activity.exp_scaling && location_activity.done_actions != 0 )
@@ -2650,7 +2653,10 @@ function update_gathering_tooltip(current_activity) {
     }
     gathering_tooltip.innerHTML += `Every ${format_reading_time(gathering_time_needed)}, chance of finding:`;
     for(let i = 0; i < gained_resources.length; i++) {
-        gathering_tooltip.innerHTML += `<br>x${gained_resources[i].count[0]===gained_resources[i].count[1]?gained_resources[i].count[0]:`${gained_resources[i].count[0]}-${gained_resources[i].count[1]}`} "${gained_resources[i].name}" (${Math.round(100*gained_resources[i].chance)}%)`;
+        const resource_key = gained_resources[i].name;
+        const resource_item = item_templates[resource_key];
+        const resource_name = resource_item?.getName?.() ?? resource_key;
+        gathering_tooltip.innerHTML += `<br>x${gained_resources[i].count[0]===gained_resources[i].count[1]?gained_resources[i].count[0]:`${gained_resources[i].count[0]}-${gained_resources[i].count[1]}`} "${resource_name}" (${Math.round(100*gained_resources[i].chance)}%)`;
     }
     if(current_activity.exp_scaling)
     {
