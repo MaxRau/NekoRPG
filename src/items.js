@@ -644,7 +644,10 @@ class Shield extends Equippable {
     }
 
     getName() {
-        return item_templates[this.components.shield_base].shield_name;
+        if(!this.name) {
+            this.name = item_templates[this.components.shield_base].shield_name;
+        }
+        return this.name;
     }
 
     getValue(quality) {
@@ -885,8 +888,11 @@ class Weapon extends Equippable {
     } 
 
     getName() {
-        let WTM = {"sword":"sword","trident":"trident","moonwheel":"moonwheel","31":"32"}
-        return `${item_templates[this.components.head].name_prefix} ${this.weapon_type === "hammer" ? "war hammer" : WTM[this.weapon_type]}`;
+        if(!this.name) {
+            let WTM = {"sword":"sword","trident":"trident","moonwheel":"moonwheel","spear":"spear","axe":"axe","dagger":"dagger"}
+            this.name = `${item_templates[this.components.head].name_prefix} ${this.weapon_type === "hammer" ? "war hammer" : WTM[this.weapon_type]}`;
+        }
+        return this.name;
     }
 }
 
