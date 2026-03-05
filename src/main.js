@@ -892,7 +892,7 @@ function textline_special(t_key){
             if(a4_realm >= 12) displayed_text = `You've already reached mid-Earth Rank and you're still not going?<br>If you keep acting like this, don't call yourself my daughter!<br>` ;
             else displayed_text = `Your self-created sword technique<br>is enough to let you demonstrate strength beyond Earth Rank Stage 5.<br>` ;
 
-            if(enemy_killcount["Baifang [Wild Beast Forest ver.] [BOSS]"]) displayed_text += "...Wait, you already beat Baifang to tears???<br>";
+            if(enemy_killcount["百方[荒兽森林 ver.][BOSS]"]) displayed_text += "...Wait, you already beat Baifang to tears???<br>";
             else displayed_text += "Once your training bears fruit, that mere Baifang will be nothing to fear!<br>";
 
             displayed_text += "The family secret realm opens once every half year.<br>During this time, stay with the family<br>and consolidate your current realm strength.";
@@ -3533,7 +3533,7 @@ function load(save_data) {
                             equip_item(item);
                         }
                     } else {
-                        const item = getItem({...item_templates[save_data.character.equipment[key].name], quality:quality*quality_mult});
+                        const item = getItem({...item_templates[save_data.character.equipment[key].id], quality:quality*quality_mult});
                         equip_item(item);
                     }
 
@@ -3692,7 +3692,7 @@ function load(save_data) {
             }
             else { //is stackable 
                 if(item_templates[key]) {
-                    item_list.push({item: getItem(item_templates[save_data.character.inventory[key].item.name]), count: save_data.character.inventory[key].count});
+                    item_list.push({item: getItem(item_templates[save_data.character.inventory[key].item.id || save_data.character.inventory[key].item.name]), count: save_data.character.inventory[key].count});
                 } else {
                     console.warn(`Inventory item "${key}" from save on version "${save_data["game version"]}" couldn't be found!`);
                     return;
@@ -3856,7 +3856,7 @@ function load(save_data) {
                                                     trader_item_list.push({item, count: 1});
                                                 }
                                             } else {
-                                                const item = getItem({...item_templates[save_data.traders[trader].inventory[key][i].name], quality: quality*100});
+                                                const item = getItem({...item_templates[save_data.traders[trader].inventory[key][i].id], quality: quality*100});
                                                 trader_item_list.push({item, count: 1});
                                             }
                                         }
@@ -3875,7 +3875,7 @@ function load(save_data) {
                             } else if(item_templates[key].item_type === "USABLE") {
                                 save_data.traders[trader].inventory[key].item.use_effect = item_templates[key].use_effect;
                             }
-                            trader_item_list.push({item: getItem(item_templates[save_data.traders[trader].inventory[key].item.name]), count: save_data.traders[trader].inventory[key].count});
+                            trader_item_list.push({item: getItem(item_templates[save_data.traders[trader].inventory[key].item.id]), count: save_data.traders[trader].inventory[key].count});
                         }
                     }
                 });
