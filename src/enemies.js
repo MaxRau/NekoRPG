@@ -9,6 +9,7 @@ let enemy_killcount = {};
 
 class Enemy {
     constructor({name, 
+                 id = null,
                  description, 
                  xp_value = 1, 
                  stats, 
@@ -25,6 +26,7 @@ class Enemy {
                 }) {
                     
         this.name = name;
+            this.id = id ?? name;
         this.rank = rank; //only for the bestiary order; higher rank => higher in display
         this.description = description; //try to keep it short
         this.xp_value = xp_value;
@@ -6059,5 +6061,11 @@ B5 6324'5986 /1'0233'4155exp
         stats: {health: 400, attack: 60, agility: 60, dexterity: 60,intuition: 60, attack_speed: 2, defense: 30},
     });
 })()
+
+Object.keys(enemy_templates).forEach((enemy_key) => {
+    if(!enemy_templates[enemy_key].id) {
+        enemy_templates[enemy_key].id = enemy_key;
+    }
+});
 
 export {Enemy, enemy_templates, enemy_killcount};

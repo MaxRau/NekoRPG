@@ -3590,10 +3590,14 @@ function format_percent(perc){
 function create_new_bestiary_entry(enemy_name) {
     bestiary_entry_divs[enemy_name] = document.createElement("div");
     
-    const enemy = enemy_templates[enemy_name];
+    const enemy = enemy_templates[enemy_name] || Object.values(enemy_templates).find((template_enemy) => template_enemy.name === enemy_name);
+    if(!enemy) {
+        console.error(`Couldn't create bestiary entry for enemy '${enemy_name}' - matching template not found`);
+        return;
+    }
 
     const name_div = document.createElement("div");
-    name_div.innerHTML = enemy_name;
+    name_div.innerHTML = enemy.name || enemy_name;
     name_div.classList.add("bestiary_entry_name");
     const kill_counter = document.createElement("div");
     kill_counter.innerHTML = enemy_killcount[enemy_name];

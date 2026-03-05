@@ -10,7 +10,7 @@ See also: [Glossary](translation-glossary.md)
 | 2 | `index.html` | ~104 | ✅ Done |
 | 3 | `src/items.js` | ~562 | ✅ Done |
 | 4 | `src/enemies.js` | ~788 | ✅ Done |
-| 5 | `src/locations.js` | ~764 | ⬜ Pending |
+| 5 | `src/locations.js` | ~764 | ✅ Done |
 | 6 | `src/dialogues.js` | ~265 | ⬜ Pending |
 | 7 | `src/crafting_recipes.js` | ~292 | ⬜ Pending |
 | 8 | `src/display.js` | ~284 | ⬜ Pending |

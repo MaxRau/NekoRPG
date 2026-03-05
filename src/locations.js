@@ -235,9 +235,9 @@ class Combat_zone {
                 log_message(`${f_enemy.name} absorbed ${format_number(character.stats.full.agility * newEnemy.spec_value[30])} attack [Purify]`,"enemy_enhanced");
                 newEnemy.stats.attack += character.stats.full.agility * newEnemy.spec_value[30];//净化
             }
-            if(newEnemy.name == "Dungeon Breeder [BOSS]")//特判地宫养殖者
+            if(newEnemy.id == "地宫养殖者[BOSS]")//特判地宫养殖者
             {
-                if(enemy_killcount["Dungeon Breeder [BOSS]"]) console.log("试图再次击杀");
+                if(enemy_killcount["地宫养殖者[BOSS]"]) console.log("试图再次击杀");
                 else{
                     if(character.equipment.special?.name == "Nanami")//姐姐在！
                     {
@@ -295,8 +295,9 @@ class Combat_zone {
  
         for(let i = 0; i < enemy_group.length; i++) {
             const enemy = enemy_templates[enemy_group[i]];
-            if(enemy.name == undefined){
-                console.error("试图在 " + this.name + " 中生成未定义的敌人 [" + enemy_group[i].name + "]");
+            if(!enemy || enemy.name == undefined){
+                console.error("试图在 " + this.name + " 中生成未定义的敌人 [" + enemy_group[i] + "]");
+                continue;
             }
             // if(this.enemy_stat_variation != 0) {
 
@@ -326,7 +327,7 @@ class Combat_zone {
 
             // } else {
             let halo_fix = 0;
-            if(enemy.name == "Secret Realm Heart-Flame Spirit [BOSS]")//特判秘境心火
+            if(enemy.id == "秘境心火精灵[BOSS]")//特判秘境心火
             {
                 const key_id = item_templates["微花残片"].getInventoryKey();
                 let key_cnt = character.inventory[key_id]?character.inventory[key_id].count:0;
