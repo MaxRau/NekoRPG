@@ -3518,7 +3518,12 @@ function load(save_data) {
                         equip_item(item);
                     }
                 } else if(save_data.character.equipment[key].equip_slot === "arti'fact" || save_data.character.equipment[key].tags?.tool) {
-                    equip_item(getItem(save_data.character.equipment[key]));
+                    const saved = save_data.character.equipment[key];
+                    if(saved.tags?.tool && item_templates[saved.id]) {
+                        equip_item(getItem({...item_templates[saved.id], quality: saved.quality}));
+                    } else {
+                        equip_item(getItem(saved));
+                    }
                 } else { //armor
                     
                     const {quality, equip_slot} = save_data.character.equipment[key];
