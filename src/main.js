@@ -2538,7 +2538,7 @@ function get_location_rewards(location) {
             }
         }
         if(any_unlocked) {
-            log_message(`You should speak with ${location.repeatable_reward.textlines[i].dialogue}`, "dialogue_unlocked");
+            log_message(`You should speak with ${dialogues[location.repeatable_reward.textlines[i].dialogue]?.name ?? location.repeatable_reward.textlines[i].dialogue}`, "dialogue_unlocked");
             //maybe do this only when there's just 1 dialogue with changes?
         }
     }
