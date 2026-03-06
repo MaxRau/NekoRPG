@@ -374,7 +374,7 @@ function create_item_tooltip_content({item, options={}}) {
     else if (item.item_type === "USABLE") {
         item_tooltip += `<br>`;
         if(item.realmcap != -1){
-            item_tooltip += `<br>Realm Cap: <span class=realm_${window.REALMS[item.realmcap][5]}>${window.REALMS[item.realmcap][1]}</span> 及以下<br>`
+            item_tooltip += `<br>Realm Cap: <span class=realm_${window.REALMS[item.realmcap][5]}>${window.REALMS[item.realmcap][1]}</span> and below<br>`
         }
 
         if(item.effects.length > 0) {
