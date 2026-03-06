@@ -1919,68 +1919,27 @@ function do_enemy_combat_action(enemy_id,spec_hint,E_atk_mul = 1,E_dmg_mul = 1) 
     update_displayed_health();
 }
 function get_enemy_realm(enemy){
-    let realm_index = enemy.realm.search("<b>")
-    let realm_e = 0;//enemy
-    let realm_f = enemy.realm[realm_index + 3];//first
-    let realm_l = enemy.realm[realm_index + 6];//last
-    switch (realm_f){
-        case "微":
-            realm_e += 0;
-            break;
-        case "万":
-            realm_e += 3;
-            break;
-        case "潮":
-            realm_e += 6;
-            break;
-        case "大":
-            realm_e += 9;
-            break;  
-        case "天":
-            realm_e += 18;
-            break;  
+    const match = enemy.realm.match(/<b>([^<]+)<\/b>/);
+    if (!match) return 0;
+    const text = match[1];
+
+    let base = 0;
+    if (text.startsWith("Myriad")) base = 3;
+    else if (text.startsWith("Tidal")) base = 6;
+    else if (text.startsWith("Earth")) base = 9;
+    else if (text.startsWith("Sky")) base = 18;
+    // else Dust: base = 0
+
+    const stage_match = text.match(/Stage (\d+)/);
+    if (stage_match) return base + (parseInt(stage_match[1]) - 1);
+
+    if (text.includes("Pinnacle") || text.includes("Breakthrough")) {
+        if (base >= 9) return base + 8; // Earth/Sky: pinnacle = stage 9 equivalent
+        return base + 2;               // Dust/Myriad/Tidal: 3 sub-ranks
     }
-    switch (realm_l){
-        case "初":
-            realm_e += 0;
-            break;
-        case "中":
-            realm_e += 1;
-            break;
-        case "高":
-            realm_e += 1;
-            break;
-        case "巅":
-            realm_e += 2;
-            break;
-        case "一":
-            realm_e += 0;
-            break;
-        case "二":
-            realm_e += 1;
-            break;  
-        case "三":
-            realm_e += 2;
-            break;  
-        case "四":
-            realm_e += 3;
-            break;  
-        case "五":
-            realm_e += 4;
-            break;  
-        case "六":
-            realm_e += 5;
-            break;  
-        case "七":
-            realm_e += 6;
-            break;  
-        case "八":
-            realm_e += 7;
-            break;  
-    }
-    if(realm_l == "高" && realm_e == 1) realm_e += 1;//微尘高级 特判
-    if(realm_l == "巅" && realm_e >= 11) realm_e += 6;//大地级以上巅峰指九阶而不是三阶
-    return realm_e;
+    if (text.includes("Expert")) return base === 0 ? 2 : base + 1; // Dust Expert is index 2
+    if (text.includes("Adept")) return base + 1;
+    return base; // Novice
 }
 function update_neko_realm()
 {
