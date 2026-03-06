@@ -1065,7 +1065,7 @@ function textline_special(t_key){
                 }]);
                 if(T_cnt != 0) add_to_character_inventory([{ "item": getItem(item_templates[pz_map[T_S]]), "count": T_cnt }]);
                 displayed_text += `Consumed ${C_pz * T_cnt} Wild Beast Voucher(s),<br>`;
-                displayed_text += `Exchanged for ${T_cnt} x ${pz_map[T_S]}.<br>`;
+                displayed_text += `Exchanged for ${T_cnt} x ${item_templates[pz_map[T_S]].getName()}.<br>`;
 
             }
             else displayed_text += `[Wild Beast Voucher] not found!<br>You need it at the exchange point to trade for items...`;
@@ -4871,7 +4871,7 @@ function get_money(coin_type,coin_num)
         character.money -= value;
         let coin_map = {1:"红色刀币",2:"黑色刀币",3:"绿色刀币",4:"紫色刀币"}
         let coin = coin_map[coin_type];
-        log_message(`Obtained ${coin} x ${coin_num}!`,"combat_loot");
+        log_message(`Obtained ${item_templates[coin].getName()} x ${coin_num}!`,"combat_loot");
         add_to_character_inventory([{ "item": getItem(item_templates[coin]), "count": coin_num }]);
         update_displayed_character_inventory();
         update_displayed_money();
