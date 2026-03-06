@@ -2938,7 +2938,7 @@ function use_item(item_key,stated = false) {
     {
         if(item_templates[id].realmcap<character.xp.current_level)
         {
-            log_message(`Your realm is <span class=realm_${window.REALMS[character.xp.current_level][5]}>${window.REALMS[character.xp.current_level][1]}</span>, which exceeds <span class=realm_${window.REALMS[item_templates[id].realmcap][5]}>${window.REALMS[item_templates[id].realmcap][1]}</span>, so you cannot use ${item_templates[id].name}`, `gather_loot`);
+            log_message(`Your realm is <span class=realm_${window.REALMS[character.xp.current_level][5]}>${window.REALMS[character.xp.current_level][1]}</span>, which exceeds <span class=realm_${window.REALMS[item_templates[id].realmcap][5]}>${window.REALMS[item_templates[id].realmcap][1]}</span>, so you cannot use ${item_templates[id].getName()}`, `gather_loot`);
             
             remove_from_character_inventory([{item_key}]);
             return;
@@ -2958,7 +2958,7 @@ function use_item(item_key,stated = false) {
     if(G_value > 0)//using gems
     {
         used=true;
-        let message = `Used ${item_templates[id].name}, `
+        let message = `Used ${item_templates[id].getName()}, `
         let SCGV = 30;//SoftCappedGemValue
         let HPMV = 50;//HealthPointMultiplierValue
         if(G_value > 7500) HPMV *= 2;//殿堂级修正
@@ -3066,7 +3066,7 @@ function use_item(item_key,stated = false) {
     {
         let E_modi = (C_value==2)?(0.2**(Math.max(0,character.xp.current_level-19))):(1);
         add_xp_to_character(E_value*E_modi,true,false,C_value);
-        log_message(`Used ${item_templates[id].name}, gained ${format_number(E_value*E_modi)} XP${E_modi==1?"":`(under-realm penalty -${format_number((1-E_modi)*100)}%)`}`,"gather_loot");
+        log_message(`Used ${item_templates[id].getName()}, gained ${format_number(E_value*E_modi)} XP${E_modi==1?"":`(under-realm penalty -${format_number((1-E_modi)*100)}%)`}`,"gather_loot");
         if(E_modi != 1){
             if(E_value == 1e11){
                 inf_combat.B3 = inf_combat.B3 || 0;
@@ -3101,7 +3101,7 @@ function use_item_max(item_key)
     character.stats.add_active_effect_bonus();
     update_character_stats();
     A1=character.stats.flat.gems.attack_power,D1=character.stats.flat.gems.defense,G1=character.stats.flat.gems.agility,H1=character.stats.flat.gems.max_health;
-    log_message(`Batch used ${cnt} x ${id}.`, `gather_loot`);
+    log_message(`Batch used ${cnt} x ${item_templates[id]?.getName?.() ?? id}.`, `gather_loot`);
     A0=A0||0,A1=A1||0,D0=D0||0,D1=D1||0,G0=G0||0,G1=G1||0,H0=H0||0,H1=H1||0;
     if(A1!=A0||D1!=D0||G1!=G0||H1!=H0) log_message(`Gained ${format_number((A1-A0)||0)} attack, ${format_number((D1-D0)||0)} defense, ${format_number((G1-G0)||0)} agility, ${format_number((H1-H0)||0)} max HP.`, `gather_loot`);
     return;
