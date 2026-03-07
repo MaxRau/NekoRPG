@@ -5685,8 +5685,9 @@ B5 6324'5986 /1'0233'4155exp
     });
     enemy_templates["地宫养殖者[BOSS]"] = new Enemy({
         name: "Dungeon Breeder [BOSS]",
+        id: "地宫养殖者[BOSS]",
         description: "The final boss of Act 1. You might not be able to beat 2-5 normally, thankfully there is the laser gun...",
-        xp_value: 1346269, 
+        xp_value: 1346269,
         rank: 1599,
         image: "image/boss/B1503.png",
         realm: "<span class=realm_sky><b>Sky Rank: Stage 1</b></span>",
@@ -5943,8 +5944,9 @@ B5 6324'5986 /1'0233'4155exp
     
     enemy_templates["舰船中枢B6[BOSS]"] = new Enemy({
         name: "Ship Core B6 [BOSS]",
+        id: "舰船中枢B6[BOSS]",
         description: "The main combat core of the B6 spaceship. Swift movement speed, formidable combat power. However, it is now time for the laser gun to shine.",
-        xp_value: 165580141, 
+        xp_value: 165580141,
         rank: 2899,
         image: "image/boss/B2803.png",
         realm: "<span class=realm_sky><b>Sky Rank: Stage 6</b></span>",
