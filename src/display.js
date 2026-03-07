@@ -3766,6 +3766,7 @@ function create_new_bestiary_entry(enemy_name) {
         const loot_chance_current = document.createElement("div");
         const loot_item_key = enemy.loot_list[i].item_name;
         const loot_item = item_templates[loot_item_key];
+        if(!loot_item) continue;
 
         loot_line.classList.add("loot_slot_div");
         loot_name.classList.add("loot_name");

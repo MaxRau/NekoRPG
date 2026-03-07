@@ -5770,6 +5770,7 @@ B5 6324'5986 /1'0233'4155exp
     });
     enemy_templates["秘境心火精灵[BOSS]"] = new Enemy({
         name: "Secret Realm Heart-Flame Spirit [BOSS]",
+        id: "秘境心火精灵[BOSS]",
         description: "Already strong enough, and it uses a halo too... thankfully the halo can be removed!",
         xp_value: 46368, 
         rank: 2399,
