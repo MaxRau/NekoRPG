@@ -5566,7 +5566,7 @@ B5 6324'5986 /1'0233'4155exp
     });
     enemy_templates["百兰[BOSS]"] = new Enemy({
         name: "Bai Lan [BOSS]",
-        description: "The man outside the city. He looks down on Nako, but his strength isn't much greater than Nako's.",
+        description: "The man outside the city. He looks down on Neko, but his strength isn't much greater than Neko's.",
         add_to_bestiary: true,
         xp_value: 34, 
         rank: 1398,
@@ -5863,7 +5863,7 @@ B5 6324'5986 /1'0233'4155exp
     
     enemy_templates["百方[BOSS]"] = new Enemy({
         name: "Baifang [BOSS]",
-        description: "This is the real one! Though the young master progresses a bit slowly compared to Nako~",
+        description: "This is the real one! Though the young master progresses a bit slowly compared to Neko~",
         xp_value: 514229, 
         rank: 2797,
         image: "image/boss/B2102.png",

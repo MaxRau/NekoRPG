@@ -884,7 +884,7 @@ class Textline {
             "jp2": new Textline({ 
                 is_unlocked: false,
                 name: "It's a long story... I got into a fight with people from the Bai Clan outside. Good thing I had that talisman.",
-                text: "Nako told Nabu everything that had happened,<br>including the unexpected gain she had<br>while meditating on Qingye Waterfall after being injured.<br><br>[Nabu] How outrageous — those Bai Clan bastards! They deserve everything coming to them!<br>All they did was get jealous of what our clan obtained, and stoop to such underhanded tactics.<br>That Bailan isn't even Earth Rank,<br>has no real standing in the Bai Clan at all — saying they're helping him save face is just a shameful excuse!",
+                text: "Neko told Nabu everything that had happened,<br>including the unexpected gain she had<br>while meditating on Qingye Waterfall after being injured.<br><br>[Nabu] How outrageous — those Bai Clan bastards! They deserve everything coming to them!<br>All they did was get jealous of what our clan obtained, and stoop to such underhanded tactics.<br>That Bailan isn't even Earth Rank,<br>has no real standing in the Bai Clan at all — saying they're helping him save face is just a shameful excuse!",
                 unlocks: {
                     textlines: [{dialogue: "纳布(江畔)", lines: ["jp3"]}],
                 },
@@ -894,7 +894,7 @@ class Textline {
             "jp3": new Textline({ 
                 is_unlocked: false,
                 name: "This matter... I bear some responsibility too. I shouldn't have provoked the powerful Bai Clan and brought trouble to the family.",
-                text: "Koko, this is not your fault.<br>Don't go out alone for a while — I'll send someone to protect you. [Nako] I'm fine. Father, you always said that opportunity only comes in dangerous places.",
+                text: "Koko, this is not your fault.<br>Don't go out alone for a while — I'll send someone to protect you. [Neko] I'm fine. Father, you always said that opportunity only comes in dangerous places.",
                 unlocks: {
                     textlines: [{dialogue: "纳布(江畔)", lines: ["jp4"]}],
                 },
@@ -1062,7 +1062,7 @@ class Textline {
             "nb7": new Textline({ 
                 is_unlocked: false,
                 name: "Yes, this junior obeys.",
-                text: "Naying extended a finger and pressed it between Nako's brows.<br>Instantly, a flood of complex information poured into her mind,<br>immersing her in all manner of profound states of comprehension.<br>After a moment, Nako opened her eyes,<br>with excitement gleaming at the depths of her gaze.<br>She could feel how greatly these insights would benefit her.<br>  [Nako] Senior, thank you.<br>I now have a clear understanding of the path ahead.<br>[Naying] No need for thanks.<br>I believe my legacy is nearly at its end here.<br>What you must do next is work hard to improve yourself —<br>and when I awaken once more, I hope to see you reach even greater heights.<br>",
+                text: "Naying extended a finger and pressed it between Neko's brows.<br>Instantly, a flood of complex information poured into her mind,<br>immersing her in all manner of profound states of comprehension.<br>After a moment, Neko opened her eyes,<br>with excitement gleaming at the depths of her gaze.<br>She could feel how greatly these insights would benefit her.<br>  [Neko] Senior, thank you.<br>I now have a clear understanding of the path ahead.<br>[Naying] No need for thanks.<br>I believe my legacy is nearly at its end here.<br>What you must do next is work hard to improve yourself —<br>and when I awaken once more, I hope to see you reach even greater heights.<br>",
                 unlocks: {
                     textlines: [{dialogue: "纳鹰", lines: ["nb8"]}],
                     spec: "A7-exp",
@@ -1238,7 +1238,7 @@ class Textline {
             "yl3": new Textline({ 
                 is_unlocked: false,
                 name: "Oh, have they already clashed? What an exciting battle!",
-                text: "(Intense greatsword effects)<br>(Intense lightning strike effects)<br><br>[Nako] Whew... even from this distance,<br>I can clearly feel the terrifying energy shockwaves.",
+                text: "(Intense greatsword effects)<br>(Intense lightning strike effects)<br><br>[Neko] Whew... even from this distance,<br>I can clearly feel the terrifying energy shockwaves.",
                 unlocks: {
                     textlines: [{dialogue: "御兰", lines: ["yl4"]}],
                 },
@@ -1299,7 +1299,7 @@ class Textline {
             "nnm1": new Textline({ 
                 is_unlocked: false,
                 name: "Sister! What are you doing here?",
-                text: "[Nako] ......Sister? *poke*<br>Nako tilted her head —<br>her sister didn't seem to respond at all,<br>currently absorbed in reading a book in her hands.<br>[Nako] The spine reads... 'Gene Primal Energy Application - Spirit Body Arts'?<br>It seems like she is completely immersed in this book,<br>as if on the verge of an epiphany — best not to disturb her......",
+                text: "[Neko] ......Sister? *poke*<br>Neko tilted her head —<br>her sister didn't seem to respond at all,<br>currently absorbed in reading a book in her hands.<br>[Neko] The spine reads... 'Gene Primal Energy Application - Spirit Body Arts'?<br>It seems like she is completely immersed in this book,<br>as if on the verge of an epiphany — best not to disturb her......",
 
                 unlocks: {
                     textlines: [{dialogue: "纳娜米(飞船)", lines: ["nnm2"]}],
@@ -1308,8 +1308,8 @@ class Textline {
             }),
             "nnm2": new Textline({ 
                 is_unlocked: false,
-                name: "Nako quietly waited by her side, and in the blink of an eye three hours had passed.",
-                text: "[Nanami] Ah, I see — no wonder!<br>This book is so detailed; to gain so much in such a short time,<br>simply wonderful!<br>She tossed the book aside,<br>stood up, stretched with a lazy yawn,<br>and glanced over — Nako was staring at her with a look of profound grievance.<br>[Nanami/Nako] WAAAAAH!!",
+                name: "Neko quietly waited by her side, and in the blink of an eye three hours had passed.",
+                text: "[Nanami] Ah, I see — no wonder!<br>This book is so detailed; to gain so much in such a short time,<br>simply wonderful!<br>She tossed the book aside,<br>stood up, stretched with a lazy yawn,<br>and glanced over — Neko was staring at her with a look of profound grievance.<br>[Nanami/Neko] WAAAAAH!!",
 
                 unlocks: {
                     textlines: [{dialogue: "纳娜米(飞船)", lines: ["nnm3"]}],
@@ -1319,7 +1319,7 @@ class Textline {
             "nnm3": new Textline({ 
                 is_unlocked: false,
                 name: "What are you doing, Sister! Why did you suddenly make that sound!",
-                text: "[Nanami] K-Koko, when, when did you get here?<br>I thought those iron-skinned monsters had come......<br>[Nako] Hmm, about three hours — no matter how much I called, Sister wouldn't respond.<br>[Nanami] Boo hoo, it's all my fault for worrying you. That cultivation book just now seemed to have a pull to it — I got absorbed in it without even noticing.",
+                text: "[Nanami] K-Koko, when, when did you get here?<br>I thought those iron-skinned monsters had come......<br>[Neko] Hmm, about three hours — no matter how much I called, Sister wouldn't respond.<br>[Nanami] Boo hoo, it's all my fault for worrying you. That cultivation book just now seemed to have a pull to it — I got absorbed in it without even noticing.",
 
                 unlocks: {
                     textlines: [{dialogue: "纳娜米(飞船)", lines: ["nnm4"]}],
@@ -1329,7 +1329,7 @@ class Textline {
             "nnm3": new Textline({ 
                 is_unlocked: false,
                 name: "But Sister, a Spirit Body value of 200 million gets fully negated if the enemy has 2 million Agility — and all the enemies here have over 2 million Agility...",
-                text: "[Nanami] Huh, Koko, what did you just say?<br>[Nako] From what I know about this game,<br>as long as you don't learn the Restraint arts, it can't hurt.<br>[Nanami] ......Is that really how it works now?!<br>The two exchanged their gains from this vessel expedition,<br>along with everything they had seen and heard along the way.<br>[Nanami] Much of the intelligence I found came from the books on this bookshelf.<br>They seem to contain quite a bit of information about the Extraterrestrial Clan,<br>but unfortunately the more core content is not mentioned at all.",
+                text: "[Nanami] Huh, Koko, what did you just say?<br>[Neko] From what I know about this game,<br>as long as you don't learn the Restraint arts, it can't hurt.<br>[Nanami] ......Is that really how it works now?!<br>The two exchanged their gains from this vessel expedition,<br>along with everything they had seen and heard along the way.<br>[Nanami] Much of the intelligence I found came from the books on this bookshelf.<br>They seem to contain quite a bit of information about the Extraterrestrial Clan,<br>but unfortunately the more core content is not mentioned at all.",
 
                 unlocks: {
                     textlines: [{dialogue: "纳娜米(飞船)", lines: ["nnm4"]}],
@@ -1339,7 +1339,7 @@ class Textline {
             "nnm4": new Textline({ 
                 is_unlocked: false,
                 name: "Sister, you said these puppets are called 'Techno-Constructs' by the Extraterrestrial Clan? And the ones we encountered along the way, many of them are 'A9' and 'B1' grade?",
-                text: "[Nanami] Yes, if the records in these books are accurate,<br>the three grades A, B, and C correspond to Earth, Sky, and Sky-Cloud Rank,<br>and the numbers that follow correspond to minor cultivation stages in order.<br>[Nako] So 'A9' grade is the ninth stage of Earth Rank?<br>But the ones I encountered along the way, like that blue-skinned creature...<br>they must be equivalent to early Sky Rank combat power.<br>[Nanami] One can only conclude... the Extraterrestrial Clan's classification is far stricter.<br>More than half a rank above the Xuelo World standard.<br>Koko, you've become so strong.<br>Without my laser rifle, the me of today<br>would be completely helpless against those Techno-Constructs.",
+                text: "[Nanami] Yes, if the records in these books are accurate,<br>the three grades A, B, and C correspond to Earth, Sky, and Sky-Cloud Rank,<br>and the numbers that follow correspond to minor cultivation stages in order.<br>[Neko] So 'A9' grade is the ninth stage of Earth Rank?<br>But the ones I encountered along the way, like that blue-skinned creature...<br>they must be equivalent to early Sky Rank combat power.<br>[Nanami] One can only conclude... the Extraterrestrial Clan's classification is far stricter.<br>More than half a rank above the Xuelo World standard.<br>Koko, you've become so strong.<br>Without my laser rifle, the me of today<br>would be completely helpless against those Techno-Constructs.",
 
                 unlocks: {
                     textlines: [{dialogue: "纳娜米(飞船)", lines: ["nnm5"]}],
@@ -1349,7 +1349,7 @@ class Textline {
             "nnm5": new Textline({ 
                 is_unlocked: false,
                 name: "I suppose so, heh heh. So Sister, what do we do now?",
-                text: "[Nanami] We've already come this far, so naturally we press on.<br>A vessel from the Sky-Outsiders...<br>who knows how many years until we see one again.<br>Even setting aside all the potentially precious treasures, I want to try out the new insights I've learned.<br>[Nako] That's really not that useful...<br>Sister, why not take a Moonlight Blessing during the new moon<br>and then drink this Returning Wind Potion?<br>I guarantee it can more than double your damage output!<br>With your HP, you can receive the blessing for just sixteen Dao Coins!<br><br>[Nanami] Hm... forget it,<br>we're already inside the vessel —<br>we can't exactly run all the way out to find the idol..",
+                text: "[Nanami] We've already come this far, so naturally we press on.<br>A vessel from the Sky-Outsiders...<br>who knows how many years until we see one again.<br>Even setting aside all the potentially precious treasures, I want to try out the new insights I've learned.<br>[Neko] That's really not that useful...<br>Sister, why not take a Moonlight Blessing during the new moon<br>and then drink this Returning Wind Potion?<br>I guarantee it can more than double your damage output!<br>With your HP, you can receive the blessing for just sixteen Dao Coins!<br><br>[Nanami] Hm... forget it,<br>we're already inside the vessel —<br>we can't exactly run all the way out to find the idol..",
 
                 unlocks: {
                     items: [{item_name: "纳娜米(飞船)",quality:130}],
@@ -1389,7 +1389,7 @@ class Textline {
             "zz2": new Textline({ 
                 is_unlocked: false,
                 name: "Father, have you ever experienced a Beast Tide before? What is it like?",
-                text: "[Nabu] As the name implies......<br>Countless berserk Wild Beasts assault human towns and cities,<br>countless weak common folk lose their homes and are displaced.<br>[Nako] ......So tragic......<br>[Nabu] Koko, the City Lord's Mansion has offered generous rewards this time,<br>taken from what was recovered from the Sky-Outsider by the major territories.<br>Hunt Wild Beasts and bring back proof, and you can claim your reward.",
+                text: "[Nabu] As the name implies......<br>Countless berserk Wild Beasts assault human towns and cities,<br>countless weak common folk lose their homes and are displaced.<br>[Neko] ......So tragic......<br>[Nabu] Koko, the City Lord's Mansion has offered generous rewards this time,<br>taken from what was recovered from the Sky-Outsider by the major territories.<br>Hunt Wild Beasts and bring back proof, and you can claim your reward.",
                 unlocks: {
                     textlines: [{dialogue: "纳布(沼泽)", lines: ["zz3"]}],
                 },
@@ -1469,7 +1469,7 @@ class Textline {
             "lf1": new Textline({ 
                 is_unlocked: false,
                 name: "You, you...",
-                text: "[???] Thank you.<br>[Nako] Who are you, and why would you be in a place like this?<br>It's way too suspicious!<br>[???] Uh... do I really look suspicious?",
+                text: "[???] Thank you.<br>[Neko] Who are you, and why would you be in a place like this?<br>It's way too suspicious!<br>[???] Uh... do I really look suspicious?",
                 unlocks: {
                     textlines: [{dialogue: "峰", lines: ["lf2"]}],
                 },
@@ -1498,7 +1498,7 @@ class Textline {
             "lf4": new Textline({ 
                 is_unlocked: false,
                 name: "......Wait! Don't go!",
-                text: "[???] Is there something else?<br>[Nako] You...<br>Since you're so capable, guide me out of the forest then.<br>I can't find my way back.<br>[???] Heh heh, alright. Little girl, what's your name?<br>[Nako] ......<br><br>Nako. That's my name. And you?<br>[Feng] My name is <span style='color:aqua'>[Feng]</span>",
+                text: "[???] Is there something else?<br>[Neko] You...<br>Since you're so capable, guide me out of the forest then.<br>I can't find my way back.<br>[???] Heh heh, alright. Little girl, what's your name?<br>[Neko] ......<br><br>Neko. That's my name. And you?<br>[Feng] My name is <span style='color:aqua'>[Feng]</span>",
                 unlocks: {
                     textlines: [{dialogue: "峰", lines: ["lf5"]}],
                 },
@@ -1507,7 +1507,7 @@ class Textline {
             "lf5": new Textline({ 
                 is_unlocked: false,
                 name: "................Along the way, the two gradually opened up to each other.",
-                text: "[Nako] (How to put it...<br>this person, when I first saw him,<br>seemed to be acting very strangely.)<br>(But after walking together for a while,<br>he's unexpectedly easy to get along with.)<br>Feng... you must be older than me,<br>so I'll call you Big Brother Feng.<br>If you don't mind, call me Koko.<br>[Feng] Sure. Koko, you said earlier<br>that this is the heart of Yangang Territory's sphere of influence?<br>And where we're heading<br>is Yangang City, the [Territorial Capital] of Yangang Territory?",
+                text: "[Neko] (How to put it...<br>this person, when I first saw him,<br>seemed to be acting very strangely.)<br>(But after walking together for a while,<br>he's unexpectedly easy to get along with.)<br>Feng... you must be older than me,<br>so I'll call you Big Brother Feng.<br>If you don't mind, call me Koko.<br>[Feng] Sure. Koko, you said earlier<br>that this is the heart of Yangang Territory's sphere of influence?<br>And where we're heading<br>is Yangang City, the [Territorial Capital] of Yangang Territory?",
                 unlocks: {
                     textlines: [{dialogue: "峰", lines: ["lf6"]}],
                 },
@@ -1516,7 +1516,7 @@ class Textline {
             "lf6": new Textline({ 
                 is_unlocked: false,
                 name: "Yes, although the Beast Tide has struck,",
-                text: "[Nako] All the powerful cultivators of Yangang Territory are out defending against the Beast Tide,<br>so the city is temporarily rather empty.<br>[Feng] In that case... once we're out of the forest,<br>I'll be counting on you to lead the way.<br><br>[Feng] has joined the party!",
+                text: "[Neko] All the powerful cultivators of Yangang Territory are out defending against the Beast Tide,<br>so the city is temporarily rather empty.<br>[Feng] In that case... once we're out of the forest,<br>I'll be counting on you to lead the way.<br><br>[Feng] has joined the party!",
                 unlocks: {
                     textlines: [{dialogue: "峰", lines: ["lf7"]}],
                     items: [{item_name: "峰"}],
@@ -1526,7 +1526,7 @@ class Textline {
             "lf7": new Textline({ 
                 is_unlocked: false,
                 name: "Something's happening!",
-                text: "(Baifang appears with a group of Bai Clan members!)<br>[Baifang] Haha, I wondered who it was —<br>turns out it's Miss Nako.<br>(Twist: Our ally Leidong appears)<br>(Intense standoff)<br>(Twist: The enemy's Baiyanta appears)<br>(Another intense standoff)<br>(Twist: The enemy is scared off by Big Brother Feng)",
+                text: "(Baifang appears with a group of Bai Clan members!)<br>[Baifang] Haha, I wondered who it was —<br>turns out it's Miss Neko.<br>(Twist: Our ally Leidong appears)<br>(Intense standoff)<br>(Twist: The enemy's Baiyanta appears)<br>(Another intense standoff)<br>(Twist: The enemy is scared off by Big Brother Feng)",
                 unlocks: {
                     textlines: [{dialogue: "峰", lines: ["lf8"]}],
                 },
@@ -1535,7 +1535,7 @@ class Textline {
             "lf8": new Textline({ 
                 is_unlocked: false,
                 name: "Another turn of events!",
-                text: "(The Bai Clan members are robbed by the Thirteen Axes!)<br>(The Bai Clan members can't beat the Thirteen Axes without Restraint potions!)<br>(Baiyanta flees and begs Nako for help!)<br>(The Thirteen Axes think Nako is carrying the valuables and try to rob her!)<br><br>Not gonna lie, she really does have a <span class='coin coin_moneySp'>1.21Δ</span> gem...<br>(<span class='coin coin_moneySp'>1.21Δ</span> goes berserk and wipes out all the Thirteen Axes!)<br>(Uncle Lei suddenly gets excited and urges Nako and Feng to become friends!)",
+                text: "(The Bai Clan members are robbed by the Thirteen Axes!)<br>(The Bai Clan members can't beat the Thirteen Axes without Restraint potions!)<br>(Baiyanta flees and begs Neko for help!)<br>(The Thirteen Axes think Neko is carrying the valuables and try to rob her!)<br><br>Not gonna lie, she really does have a <span class='coin coin_moneySp'>1.21Δ</span> gem...<br>(<span class='coin coin_moneySp'>1.21Δ</span> goes berserk and wipes out all the Thirteen Axes!)<br>(Uncle Lei suddenly gets excited and urges Neko and Feng to become friends!)",
                 unlocks: {
                     textlines: [{dialogue: "峰", lines: ["lf9"]}],
                 },
@@ -1544,7 +1544,7 @@ class Textline {
             "lf9": new Textline({ 
                 is_unlocked: false,
                 name: "What in the world is even going on...",
-                text: "[Feng] Heh heh, never mind. We're safe for now —<br>let's get moving. We can talk when we reach the capital.<br>[Nako] Ugh, what is up with this guy —<br>if he's this strong, why didn't he say so earlier!<br>I spent all that effort saving him,<br>but that Barbarian Beast with a hundred million buffs couldn't even scratch him!",
+                text: "[Feng] Heh heh, never mind. We're safe for now —<br>let's get moving. We can talk when we reach the capital.<br>[Neko] Ugh, what is up with this guy —<br>if he's this strong, why didn't he say so earlier!<br>I spent all that effort saving him,<br>but that Barbarian Beast with a hundred million buffs couldn't even scratch him!",
                 unlocks: {
                     locations: ["黑暗森林 - 3"],
                 },
@@ -1553,7 +1553,7 @@ class Textline {
             "lf10": new Textline({ 
                 is_unlocked: false,
                 name: "Phew — we're finally out of that pitch-black forest.",
-                text: "[Leidong] Lord Feng, I know this city very well —<br>if there's somewhere you'd like to go...<br>[Feng] That won't be necessary... let's part ways here.<br>[Nako] Part ways... already?<br>(A flicker of disappointment crosses Nako's expression)<br>[Feng] By the way, where is the best lodging in Yangang City?<br>[Nako] Feiyun Pavilion.<br>[Feng] Good. If you want to find me, head to Feiyun Pavilion.<br><br>[Feng] has left the party!",
+                text: "[Leidong] Lord Feng, I know this city very well —<br>if there's somewhere you'd like to go...<br>[Feng] That won't be necessary... let's part ways here.<br>[Neko] Part ways... already?<br>(A flicker of disappointment crosses Neko's expression)<br>[Feng] By the way, where is the best lodging in Yangang City?<br>[Neko] Feiyun Pavilion.<br>[Feng] Good. If you want to find me, head to Feiyun Pavilion.<br><br>[Feng] has left the party!",
                 unlocks: {
                     locations: ["飞云阁"],
                     spec:"lf-leave",
@@ -1579,7 +1579,7 @@ class Textline {
             "lf12": new Textline({ 
                 is_unlocked: false,
                 name: "...Two years ago, I found them on the Sky-Outsider's vessel.",
-                text: "[Feng] This set of Arcane Arts only covers the basics,<br>and there are many imperfections.<br>Let me give you a deeper set to study.<br><br>Feng flicked his fingers lightly; two beams of light shot out and drilled into Nako's brow.<br>Nako felt only a throbbing pain in her head,<br>followed suddenly by a flood of knowledge.<br><br>Starflower - Star Cluster, Starflower - Giant Star, Starflower - Flower Sea<br> have been added to available Arcane Arts!",
+                text: "[Feng] This set of Arcane Arts only covers the basics,<br>and there are many imperfections.<br>Let me give you a deeper set to study.<br><br>Feng flicked his fingers lightly; two beams of light shot out and drilled into Neko's brow.<br>Neko felt only a throbbing pain in her head,<br>followed suddenly by a flood of knowledge.<br><br>Starflower - Star Cluster, Starflower - Giant Star, Starflower - Flower Sea<br> have been added to available Arcane Arts!",
                 unlocks: {
                     textlines: [{dialogue: "峰(飞云)", lines: ["lf13"]}],
                     stances: ["SF_Power","SF_Lucky","SF_Multi"],
@@ -1589,7 +1589,7 @@ class Textline {
             "lf13": new Textline({ 
                 is_unlocked: false,
                 name: "......About this Beast Tide defense,",
-                text: "[Nako] Even the rewards the City Lord's Mansion gives to the top few<br>probably can't compare to what Big Brother Feng just gave me.<br>[Feng] The Beast Tide?<br>Speaking of which, there is something suspicious about it.<br>It appears to have been caused by the vessel's crash,<br>but from what I know, the [D9-class Vessel]<br>contains an enormous reactor —<br>and this continent lacks the knowledge to operate it safely.",
+                text: "[Neko] Even the rewards the City Lord's Mansion gives to the top few<br>probably can't compare to what Big Brother Feng just gave me.<br>[Feng] The Beast Tide?<br>Speaking of which, there is something suspicious about it.<br>It appears to have been caused by the vessel's crash,<br>but from what I know, the [D9-class Vessel]<br>contains an enormous reactor —<br>and this continent lacks the knowledge to operate it safely.",
                 unlocks: {
                     textlines: [{dialogue: "峰(飞云)", lines: ["lf14"]}],
                 },
@@ -1651,7 +1651,7 @@ class Textline {
             "by2": new Textline({ 
                 is_unlocked: false,
                 name: "Can't take it anymore, it's too cold — I'll open the Flame Domain to warm up.",
-                text: "[Nanami] Don't use the Domain for something like this...<br>Wait, Koko, have you ever actually closed your Flame Domain?<br>[Nako] Eh...<br>In any case, Sister come closer!<br><br>Nanami has joined the party! Ability effectiveness increased by 5%!",
+                text: "[Nanami] Don't use the Domain for something like this...<br>Wait, Koko, have you ever actually closed your Flame Domain?<br>[Neko] Eh...<br>In any case, Sister come closer!<br><br>Nanami has joined the party! Ability effectiveness increased by 5%!",
                 //火焰领域设定：高温会让冰元素活化，释放出负热量，但高温领域的量级高于一小片区域的冰元素，起到驱散效果
 
                 unlocks: {

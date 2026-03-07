@@ -4349,7 +4349,7 @@ item_templates["Twist liek a snek"] = new Book({
     item_templates["地图-藏宝地"] = new OtherItem({
         id: "地图-藏宝地",
         name: "Map - Treasure Site",
-        description: "A map of a newly discovered treasure site. (Nako has memorized the location, safe to sell)",
+        description: "A map of a newly discovered treasure site. (Neko has memorized the location, safe to sell)",
         value: 999,
         image: "image/item/MT15.png",
     });

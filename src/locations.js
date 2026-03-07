@@ -248,13 +248,13 @@ class Combat_zone {
                         log_message(`[Nanami] In that case, the time has come... Koko!`,"enemy_defeated");
                         log_message(`Suddenly, a strange weapon appeared in the girl's hands. About a meter long, with a deep black void at its tip. Its overall texture radiates an overwhelming, suffocating presence.`,"enemy_enhanced");
                         log_message(`In almost a tenth of a second, the weapon in Nanami's hands burst forth with dazzling silver-white light. There was a thunderous boom, and the entire Dungeon seemed to tremble!`,"enemy_enhanced");
-                        log_message(`Hit by the recoil, Nanami spat blood. Nako, realizing what happened, immediately embraced her sister, together bracing against the weapon's incredible recoil force.`,"enemy_enhanced");
-                        log_message(`[Nako] Are you okay, sister—`,"enemy_defeated");
+                        log_message(`Hit by the recoil, Nanami spat blood. Neko, realizing what happened, immediately embraced her sister, together bracing against the weapon's incredible recoil force.`,"enemy_enhanced");
+                        log_message(`[Neko] Are you okay, sister—`,"enemy_defeated");
                         log_message(`[Nanami] Cough... it's not over yet, Koko. What comes next, I'll leave to you!`,"enemy_defeated");
                         log_message(`The Dungeon Cultivator, struck head-on by the weapon, almost instantly lost half its body and let out a venomous roar.`,"enemy_enhanced");
                         log_message(`[Dungeon Cultivator] What— impossible!! Damn it, I've been tricked. I'll kill you, kill all of you, slaughter everyone in Yangang Territory—`,"hero_attacked_critically");
                         log_message(`[Nanami] Koko, don't let your guard down! This is a Sky Rank cultivator's last burst of power. Just hold out for a moment longer!`,"enemy_enhanced");
-                        log_message(`[Nako] Understood!`,"enemy_defeated");
+                        log_message(`[Neko] Understood!`,"enemy_defeated");
                         //sleep(1000);
                         newEnemy.stats.attack *= 0.01;
                         newEnemy.stats.defense *= 0.01;
@@ -861,7 +861,7 @@ function get_location_type_penalty(type, stage, stat) {
         bgm: 1,
         connected_locations:[],
         
-        description: "A bright and tidy hall, the place where Nako usually spends her time.",
+        description: "A bright and tidy hall, the place where Neko usually spends her time.",
         traders: ["Vending Machine"],
         dialogues: ["猫妖"],
         name: "Na Family Hall",
@@ -884,7 +884,7 @@ function get_location_type_penalty(type, stage, stat) {
     locations["纳可的房间"] = new Location({
         connected_locations: [{location: locations["纳家大厅"], custom_text: "Go to the Hall"}],
         description: "A cozy little room with a pink bed and a practice workbench.",
-        name: "Nako's Room",
+        name: "Neko's Room",
         is_unlocked: true,
         bgm: 1,
         sleeping: {
@@ -1829,10 +1829,10 @@ function get_location_type_penalty(type, stage, stat) {
         leave_text: "Beat a strategic retreat",
         parent_location: locations["地宫深层"],
         repeatable_reward: {        },
-        unlock_text: "[Nako] I have to get it. Hehe, it must be worth a lot - I wonder how much we could sell it for... [Nanami] You couldn't even get a single red coin for it!",
+        unlock_text: "[Neko] I have to get it. Hehe, it must be worth a lot - I wonder how much we could sell it for... [Nanami] You couldn't even get a single red coin for it!",
     });
     locations["地宫核心 - 光幕"] = new Challenge_zone({
-        description: "The green-purple barrier is right in front of you. Nako's instincts tell her there must be something good hidden behind it.",
+        description: "The green-purple barrier is right in front of you. Neko's instincts tell her there must be something good hidden behind it.",
         enemy_count: 2, 
         enemies_list: ["喵咕哩[BOSS]"],
         enemy_group_size: [1,1],
@@ -1906,7 +1906,7 @@ function get_location_type_penalty(type, stage, stat) {
     
     locations["荒兽森林营地"] = new Location({ 
         connected_locations: [{location: locations["地宫深层"], custom_text: "Return to the Dungeon"},{location: locations["纳可的房间"], custom_text: "Fast Travel - Act 1"}],
-        description: "After leaving the Dungeon, the safe zone of Nako's next training ground.",
+        description: "After leaving the Dungeon, the safe zone of Neko's next training ground.",
 
         is_unlocked: false,
         name: "Wild Beast Forest Camp",
@@ -2026,7 +2026,7 @@ function get_location_type_penalty(type, stage, stat) {
         repeatable_reward: {
             locations: [{location: "荒兽森林 - XL"},{location: "清野江畔"}],
         },
-        unlock_text: "[Nako] You're right, but your brother hasn't even reached Earth Rank yet - how did you manage to cultivate all the way to Earth Rank Tier 7?",
+        unlock_text: "[Neko] You're right, but your brother hasn't even reached Earth Rank yet - how did you manage to cultivate all the way to Earth Rank Tier 7?",
     });
     locations["荒兽森林 - XL"] = new Challenge_zone({
         description: "A battle with Baifang. You can come back to defeat him later!",
@@ -2162,7 +2162,7 @@ function get_location_type_penalty(type, stage, stat) {
         },
     });
     locations["清野江畔 - 瀑布"] = new Challenge_zone({
-        description: "Near the waterfall that Nako visited as a child. It seems to contain some kind of insight.",
+        description: "Near the waterfall that Neko visited as a child. It seems to contain some kind of insight.",
         enemy_count: 1, 
         enemies_list: ["礁石灵[BOSS]"],
         enemy_group_size: [1,1],
@@ -3283,7 +3283,7 @@ function get_location_type_penalty(type, stage, stat) {
         },
     });
     locations["赫尔沼泽 - X"] = new Challenge_zone({
-        description: "The Yangang elite mercenaries accepted Baifang's commission and lured Nako here. However, danger can sometimes be an opportunity in disguise.",
+        description: "The Yangang elite mercenaries accepted Baifang's commission and lured Neko here. However, danger can sometimes be an opportunity in disguise.",
         enemy_count: 1, 
         enemies_list : [["魅影幻姬[BOSS]"]],
         enemy_group_size: [1,1],
@@ -3306,7 +3306,7 @@ function get_location_type_penalty(type, stage, stat) {
     locations["赫尔沼泽"].connected_locations.push({location: locations["赫尔沼泽 - X"]});
     locations["黑暗森林"] = new Location({ 
         connected_locations: [{location: locations["赫尔沼泽"], custom_text: "Return to the Hel Swamp"}],
-        description: "A dark, overcast forest. Nako has lost her way here, and there seems to be no sign of human life around.",
+        description: "A dark, overcast forest. Neko has lost her way here, and there seems to be no sign of human life around.",
         name: "Dark Forest",
         dialogues: ["峰"],
         is_unlocked: false,

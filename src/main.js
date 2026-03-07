@@ -1043,7 +1043,7 @@ function textline_special(t_key){
             let hx_money = 1e18 / (current_game_time.day_count ** 2); 
             hx_money *= Math.random()*0.4+0.8;
             hx_money = Math.round(hx_money);
-            displayed_text += `The Nako sisters have only trained for ${current_game_time.day_count} days, yet both broke through to Sky Rank,<br>an incredibly rare occurrence in all of Yangang Territory. Countless people came to congratulate them.<br>They brought a total of ${format_money(hx_money)} in gifts.<br>Nabu added another 20% of his own,<br>splitting it equally between Nako and Nanami.<br>Nako received ${format_money(Math.round(hx_money * 0.6))}`;
+            displayed_text += `The Neko sisters have only trained for ${current_game_time.day_count} days, yet both broke through to Sky Rank,<br>an incredibly rare occurrence in all of Yangang Territory. Countless people came to congratulate them.<br>They brought a total of ${format_money(hx_money)} in gifts.<br>Nabu added another 20% of his own,<br>splitting it equally between Neko and Nanami.<br>Neko received ${format_money(Math.round(hx_money * 0.6))}`;
             character.money += Math.round(hx_money * 0.6);
             update_displayed_money();
 
@@ -1765,7 +1765,7 @@ function do_enemy_combat_action(enemy_id,spec_hint,E_atk_mul = 1,E_dmg_mul = 1) 
         {
             log_message(`In nearly a tenth of a second, the weapon in Nanami's hands blazed with a dazzling silver-white radiance. With a thunderous roar, the entire ship seemed to tremble!`,"enemy_enhanced");
             log_message(`Hit by the recoil force, Nanami didn't budge an inch. Compared to the dungeon expedition, she had advanced seven full stages, and was no longer going to be coughing blood from mere recoil.`,"enemy_enhanced");
-            log_message(`[Nako] Are you okay, sis——`,"enemy_defeated");
+            log_message(`[Neko] Are you okay, sis——`,"enemy_defeated");
             log_message(`[Nanami] Pfft... do I LOOK like I have a problem?! Hurry up and finish off the ship core!`,"enemy_defeated");
             log_message(`Ship Core B6, struck head-on by the weapon, suffered severe damage as components flew in all directions.`,"enemy_enhanced");
             log_message("Its HP has been reduced to 1.", "hero_attacked_critically");
