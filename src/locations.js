@@ -186,8 +186,9 @@ class Combat_zone {
     get_enemy(f_halo,f_enemy){
         
             let newEnemy;
-                newEnemy = new Enemy({name: f_enemy.name, 
-                    description: f_enemy.description, 
+                newEnemy = new Enemy({name: f_enemy.name,
+                    id: f_enemy.id,
+                    description: f_enemy.description,
                     xp_value: f_enemy.xp_value * Math.pow(f_halo,1.5),
                     spec: f_enemy.spec,
                     spec_value:f_enemy.spec_value,
