@@ -147,6 +147,12 @@ const rarity_colors = {
     flawless: "rarity_flawless",
 }
 
+function resolve_location_ref(location_ref) {
+    return locations[location_ref] || Object.values(locations).find(existing_location => {
+        return existing_location?.id === location_ref || existing_location?.name === location_ref;
+    });
+}
+
 const crafting_pages = {
     crafting: {
         items: document.querySelector(`[data-crafting_category="crafting"] [data-crafting_subcategory="items"]`),
@@ -1597,11 +1603,6 @@ function update_displayed_normal_location(location) {
  */
 function create_location_choices({location, category, add_icons = true, is_combat = false}) {
     let choice_list = [];
-    const resolve_location_ref = (location_ref) => {
-        return locations[location_ref] || Object.values(locations).find(existing_location => {
-            return existing_location?.id === location_ref || existing_location?.name === location_ref;
-        });
-    };
     
     if(category === "talk") {
         for(let i = 0; i < location.dialogues.length; i++) { 
@@ -1851,7 +1852,14 @@ function create_location_choices({location, category, add_icons = true, is_comba
 }
 
 function update_displayed_location_choices({location_name, category, add_icons, is_combat}) {
-    action_div.replaceChildren(...create_location_choices({location: locations[location_name], category: category, add_icons: add_icons, is_combat: is_combat}));
+    const target_location = resolve_location_ref(location_name);
+    if(!target_location) {
+        console.error(`Unable to resolve location for choices: "${location_name}"`);
+        reload_normal_location();
+        return;
+    }
+
+    action_div.replaceChildren(...create_location_choices({location: target_location, category: category, add_icons: add_icons, is_combat: is_combat}));
     const return_button = document.createElement("div");
     return_button.innerHTML = "<i class='material-icons'>arrow_back</i> Collapse";
     return_button.setAttribute("onclick", "reload_normal_location()");
